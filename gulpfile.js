@@ -16,16 +16,16 @@ var clean = require('gulp-clean-css');
 
 // JavaScript linting task
 gulp.task('jshint', function() {
-  return gulp.src('../app/js/*.js')
+  return gulp.src('./app/js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 // Compile Sass task
 gulp.task('sass', function() {
-  return gulp.src('../app/scss/*.scss')
+  return gulp.src('./app/scss/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('../app/css'));
+    .pipe(gulp.dest('./app/css'));
 });
 
 gulp.task('clean', function(){
@@ -35,32 +35,32 @@ gulp.task('clean', function(){
 
 // Minify index
 gulp.task('html', function() {
-  return gulp.src('../app/index.html')
+  return gulp.src('./app/**/*.html')
     .pipe(minifyHTML())
-    .pipe(gulp.dest('../'));
+    .pipe(gulp.dest('./_build'));
 });
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
 	// Single entry point to browserify 
-	gulp.src('../app/js/*.js')
+	gulp.src('./app/js/*.js')
 		.pipe(browserify({
 		  insertGlobals : true,
 		  debug : !gulp.env.production
 		}))
-		.pipe(gulp.dest('../build/js'))
+		.pipe(gulp.dest('./_build/js'))
 });
 
 // Styles build task, concatenates all the files
 gulp.task('styles', function() {
-  return gulp.src('../app/css/*.css')
+  return gulp.src('./app/css/*.css')
     .pipe(concat('styles.css'))
-    .pipe(gulp.dest('../app/css'));
+    .pipe(gulp.dest('./_build/css'));
 });
 
 // Image optimization task
 gulp.task('images', function() {
-  return gulp.src('../app/img/*')
+  return gulp.src('./app/img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('_build/img'));
 });
@@ -72,7 +72,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('notify', function() {
-  gulp.src("../app/css/styles.css")
+  gulp.src("./app/css/styles.css")
   .pipe(notify("Hello Gulp!"));
 });
 
@@ -80,7 +80,6 @@ gulp.task('notify', function() {
 gulp.task('default', ['jshint', 'sass', 'watch']);
 
 gulp.task('prebuild', gulpsync.sync(['clean']));
-gulp.task('preflight',['images']);
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles']);
+gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'images', 'styles']);
