@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="timesSearchApp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>All-Time(s) Search</title>
+	<!-- styles -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+	<div class="masthead">
+		<ul>
+			<li class="animated slideInLeft big-title">All-Time(s) Search</li>
+			<a href="http://www.nytimes.com" target="_blank"><li class="animated slideInDown masthead-links">NYT</li></a>
+			<a href="#/about"><li class="animated slideInDown masthead-links">About</li></a>
+			<a href="#/home"><li class="animated slideInDown masthead-links">Home</li></a>
+		</ul>
+	</div>
+	<footer class="footer">
+			<p class="animated fadeIn">Designed by<a href="http://www.bpatrickcox.com"> B. Patrick Cox, Jr.</a></p>
+	</footer>
+	<div class="container">
+		<!-- this is where the html partial templates load -->
+		<div ng-view>
+
+		</div>
+	</div>
+	<!-- scripts -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+  	<script src="bower_components/angular/angular.js"></script>
+ 	<script src="bower_components/angular-route/angular-route.js"></script>
+  	<script src="bower_components/angular-animate/angular-animate.js"></script>
+  	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/controllers.js"></script>
+</body>
+</html>
