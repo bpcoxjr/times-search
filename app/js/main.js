@@ -1,4 +1,4 @@
-angular.module('timesSearchApp', ['ngRoute'])
+angular.module('timesSearchApp', ['ngRoute', 'infinite-scroll'])
 
 .config(['$locationProvider', '$routeProvider',
 	function($locationProvider, $routeProvider){

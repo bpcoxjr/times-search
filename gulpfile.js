@@ -67,8 +67,8 @@ gulp.task('images', function() {
 
 // Watch task
 gulp.task('watch', function() {
-  gulp.watch('app/js/*.js', ['jshint']);
-  gulp.watch('./scss/**/*.scss', ['sass']);
+  gulp.watch('./app/js/*.js', ['jshint']);
+  gulp.watch('./app/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('notify', function() {
