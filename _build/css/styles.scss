@@ -24,7 +24,8 @@ body {
 	min-width: 100%;
 	min-height: 6em;
 	li {
-		animation-duration: $animationTime;
+		-webkit-animation-duration: $animationTime;
+		        animation-duration: $animationTime;
 		display: inline-block;
 	}
 }
@@ -247,7 +248,8 @@ input[type=checkbox]:checked {
 	border: 3px solid #4d4d4d;
 	position: relative;
 	border-radius: 5px;
-	animation-duration: $animationTime;
+	-webkit-animation-duration: $animationTime;
+	        animation-duration: $animationTime;
 	
 }
 
@@ -298,7 +300,8 @@ hr {
 	position: absolute;
 	top: 20%;
 	left: 85%;
-    transform: translate(-50%, -50%);  
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);  
     button {
 		font-family: $googleFont;
 		font-size: 1.5em;
@@ -334,19 +337,31 @@ hr {
   $flex-box-width: 18em;
 
   @include clearfix;
-  align-items: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   clear: both;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 
   .flex-box {
-    align-self: stretch;
+    -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+            align-self: stretch;
     background: $backgroundColor;
     border-radius: $base-border-radius;
     display: block;
-    flex: 2 2 15em;
+    -webkit-flex: 2 2 15em;
+        -ms-flex: 2 2 15em;
+            flex: 2 2 15em;
     margin: $flex-box-gutter;
     padding: 2em 2em 3em 2em;
     border: $flex-box-border;
@@ -384,6 +399,8 @@ hr {
   
 
   .flex-box-big {
-    flex: 1 1 40em;
+    -webkit-flex: 1 1 40em;
+        -ms-flex: 1 1 40em;
+            flex: 1 1 40em;
   }
 }

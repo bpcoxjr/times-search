@@ -13,6 +13,7 @@ var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var clean = require('gulp-clean-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 // JavaScript linting task
 gulp.task('jshint', function() {
@@ -65,6 +66,16 @@ gulp.task('images', function() {
     .pipe(gulp.dest('_build/img'));
 });
 
+//Add vendor prefixes to css
+gulp.task('autoprefixer', function(){
+	return gulp.src('./app/scss/**/*.scss')
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: true
+		}))
+		.pipe(gulp.dest('./_build/css'));
+});
+
 // Watch task
 gulp.task('watch', function() {
   gulp.watch('./app/js/*.js', ['jshint']);
@@ -82,4 +93,4 @@ gulp.task('default', ['jshint', 'sass', 'watch']);
 gulp.task('prebuild', gulpsync.sync(['clean']));
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'images', 'styles']);
+gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'images', 'autoprefixer', 'styles']);

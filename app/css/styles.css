@@ -77,8 +77,7 @@ body {
   min-width: 100%;
   min-height: 6em; }
   .masthead li {
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
+    animation-duration: 2s;
     display: inline-block; }
 
 .big-title {
@@ -265,8 +264,7 @@ input[type=checkbox]:checked {
   border: 3px solid #4d4d4d;
   position: relative;
   border-radius: 5px;
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s; }
+  animation-duration: 2s; }
 
 .weather-report {
   height: 200px;
@@ -309,17 +307,20 @@ hr {
   position: absolute;
   top: 20%;
   left: 85%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
-  .return-home h2 {
+  .return-home button {
     font-family: "Belgrano", serif;
     font-size: 1.5em;
     color: #595959;
+    background-color: rgba(255, 255, 255, 0.8);
     float: right;
     border: 2px solid #4d4d4d;
     border-radius: 2px;
     padding: .3em;
     -webkit-font-smoothing: antialiased; }
+    .return-home button:hover {
+      background-color: #4d4d4d;
+      color: #fff; }
 
 /* Refills flex box styles */
 .flex-boxes {
@@ -346,7 +347,8 @@ hr {
     border: 3px solid #4d4d4d;
     text-decoration: none; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
-      background-color: #f2f2f2; }
+      /*background-color: $flex-box-background;*/
+      background-image: url("../img/exclusive_paper.png"); }
   .flex-boxes img {
     display: block;
     height: 3em;
