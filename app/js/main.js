@@ -1,19 +1,19 @@
-angular.module('timesSearchApp', ['DataServices', 'ngRoute', 'infinite-scroll'])
+angular.module('timesSearchApp', ['ArticleServices', 'ngRoute', 'infinite-scroll'])
 
 .config(['$locationProvider', '$routeProvider',
 	function($locationProvider, $routeProvider){
 		$routeProvider
 		.when("/home", {
 			templateUrl: "./partials/search.html",
-			controller: "MainCtrl",
+			controller: "SearchController",
 		})
 		.when("/about", {
 			templateUrl: "./partials/about.html",
-			controller: "MainCtrl",
+			controller: "SearchController",
 		})
 		.when("/results", {
 			templateUrl: "./partials/results.html",
-			controller: "ResultsCtrl",
+			controller: "ResultsController",
 		})
 		.otherwise({
 			redirectTo: "/home"

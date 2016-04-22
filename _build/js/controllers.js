@@ -2,22 +2,22 @@
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 angular.module('timesSearchApp')
 
-.controller('MainCtrl', ['DataServices', '$scope', '$location', function(DataServices, $scope, $location){
-
-	//form not submitted when app initializes
-	$scope.formSubmitted = false; 
+.controller('SearchController', ['articleFactory', '$scope', '$location', function(DataServices, $scope, $location){
 
 	//this function called when 'Search' button clicked
-	$scope.submitForm = function(){
-		$scope.formSubmitted = true;
-		var searchTerm = $scope.searchTerm;
+	$scope.submitForm = function($scope, articleFactory){
+		var query = $scope.query;
+		console.log('Form submitted. Searching NYT for: ' + query);
+		articleFactory.getArticles($scope.query).then(
+			function(results){
+				$scope.results = results;
+			});
 		$location.path('/results');
-		console.log('Form submitted. Searching NYT for: ' + searchTerm);
 	};
 
 }])
 
-.controller('ResultsCtrl', ['DataServices', '$scope', '$location', function($scope, $location){
+.controller('ResultsController', ['articleFactory', '$scope', '$location', function($scope, $location){
 	
 	//date variable to show current date @ top of results page
 	$scope.date = new Date();
@@ -25,12 +25,11 @@ angular.module('timesSearchApp')
 	//function executes when user clicks 'Go Back' button
 	$scope.startOver = function(){
 		document.getElementById("search-form").reset();
-		$scope.formSubmitted = false;
 		$scope.results = [];
 		console.log('Returning to blank form!');
 	};
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b2283f07.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_6a68fe4d.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

@@ -1,7 +1,7 @@
 <div class="search-container">
 	<form id="search-form" action="">	
 		<div class="search-input">
-			<input class="input-box" type="text" placeholder="Enter search term(s)..." max-length="25" autofocus>
+			<input ng-model="query" class="input-box" type="text" placeholder="Enter search term(s)..." max-length="25" autofocus>
 		</div>
 		<div class="date-input">
 			<div class="from-input">
@@ -16,7 +16,7 @@
 				<input class="check" type="checkbox">
 		</div>
 		<div class="submit-input">
-			<button ng-submit="submitForm()" class= "submit-button" type="submit">Search</button>
+			<button ng-click="submitForm()" class= "submit-button" type="submit">Search</button>
 		</div>
 	</form>
 </div>
