@@ -47,7 +47,7 @@ body {
 	color: $darker;
 	-webkit-font-smoothing: $a;
 	&:hover {
-		color: $lighter;
+		color: $white;
 	}
 }
 
@@ -66,7 +66,7 @@ body {
 	box-shadow: $footerShadow;
 	p {
 		-webkit-animation-duration: $animationTime;
-		-moz-animation-duration: $animationTime;
+		        animation-duration: $animationTime;
 		margin-bottom: .5em;
 	}
 	a {
@@ -324,17 +324,7 @@ hr {
 .flex-boxes {
   -webkit-animation-duration: $animationTime;
   -moz-animation-duration: $animationTime;
-  $base-border-radius: 5px !default;
-  $base-background-color: white !default;
-  $dark-gray: $darker !default;
-  $light-gray: $lighter !default;
-  $base-font-color: $darker !default;
-  $flex-box-font: $googleFont;
-  $flex-box-border-color: $light-gray;
-  $flex-box-border: 3px solid $medium;
-  $flex-box-background: #f2f2f2;
-  $flex-box-gutter: 0.3em;
-  $flex-box-width: 18em;
+  border: 2px solid red;
 
   @include clearfix;
   -webkit-align-items: stretch;
@@ -369,7 +359,6 @@ hr {
 
         &:focus,
         &:hover {
-          /*background-color: $flex-box-background;*/
           background-image: url("../img/exclusive_paper.png");
         }
     }

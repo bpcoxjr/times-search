@@ -26,3 +26,15 @@ $inputBorder: 1px solid #333333;
 /* about vars */
 
 /* results vars */
+
+$base-border-radius: 5px !default;
+$base-background-color: white !default;
+$dark-gray: $darker !default;
+$light-gray: $lighter !default;
+$base-font-color: $darker !default;
+$flex-box-font: $googleFont;
+$flex-box-border-color: $light-gray;
+$flex-box-border: 3px solid $medium;
+$flex-box-background: #f2f2f2;
+$flex-box-gutter: 0.3em;
+$flex-box-width: 18em;

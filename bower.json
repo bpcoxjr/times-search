@@ -24,7 +24,8 @@
     "animate.css": "^3.5.1",
     "normalize-css": "^4.1.1",
     "angular-route": "^1.5.3",
-    "ng-infinite-scroll": "^0.0.1"
+    "ng-infinite-scroll": "^0.0.1",
+    "angular-hint": "angular-hint-bower#^0.3.0"
   },
   "resolutions": {
     "angular": "^1.5.4"

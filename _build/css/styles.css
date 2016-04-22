@@ -96,7 +96,7 @@ body {
   color: #262626;
   -webkit-font-smoothing: antialiased; }
   .masthead-links:hover {
-    color: #595959; }
+    color: #fff; }
 
 .footer {
   position: absolute;
@@ -111,8 +111,7 @@ body {
   background-color: #fff;
   box-shadow: 0 7px 6px rgba(0, 0, 0, 0.5) inset; }
   .footer p {
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
+    animation-duration: 2s;
     margin-bottom: .5em; }
   .footer a {
     color: #4d4d4d; }
@@ -318,13 +317,15 @@ hr {
     border-radius: 2px;
     padding: .3em;
     -webkit-font-smoothing: antialiased; }
-  .return-home:hover {
-    color: #fff; }
+    .return-home button:hover {
+      background-color: #4d4d4d;
+      color: #fff; }
 
 /* Refills flex box styles */
 .flex-boxes {
   -webkit-animation-duration: 2s;
   -moz-animation-duration: 2s;
+  border: 2px solid red;
   align-items: stretch;
   clear: both;
   display: flex;
@@ -346,7 +347,6 @@ hr {
     border: 3px solid #4d4d4d;
     text-decoration: none; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
-      /*background-color: $flex-box-background;*/
       background-image: url("../img/exclusive_paper.png"); }
   .flex-boxes img {
     display: block;

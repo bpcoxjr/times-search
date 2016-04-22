@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/bpcoxjr/times-search#readme",
   "devDependencies": {
+    "angular-hint": "^0.3.8",
     "bourbon": "^4.2.7",
     "bourbon-neat": "^1.7.4",
     "bower": "^1.7.9",

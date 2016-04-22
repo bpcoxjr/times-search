@@ -41,13 +41,13 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./_build'));
 });
 
-// JavaScript build task, removes whitespace and concatenates all files
+// JavaScript build task, concatenates all files
 gulp.task('scripts', function() {
 	// Single entry point to browserify 
 	gulp.src('./app/js/*.js')
 		.pipe(browserify({
 		  insertGlobals : true,
-		  debug : !gulp.env.production
+		  //debug : !gulp.env.production
 		}))
 		.pipe(gulp.dest('./_build/js'))
 });
