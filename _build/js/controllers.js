@@ -2,14 +2,16 @@
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 angular.module('timesSearchApp')
 
-.controller('SearchController', ['articleFactory', '$scope', '$location', function(DataServices, $scope, $location){
+.controller('SearchController', ['articleFactory', '$scope','$location', function(articleFactory, $scope, $location){
 
+	console.log(articleFactory);
 	//this function called when 'Search' button clicked
-	$scope.submitForm = function($scope, articleFactory){
+	$scope.submitForm = function(){
 		var query = $scope.query;
 		console.log('Form submitted. Searching NYT for: ' + query);
 		articleFactory.getArticles($scope.query).then(
 			function(results){
+				console.log(results);
 				$scope.results = results;
 			});
 		$location.path('/results');
@@ -29,7 +31,7 @@ angular.module('timesSearchApp')
 		console.log('Returning to blank form!');
 	};
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_6a68fe4d.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_a7538d1a.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

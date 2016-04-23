@@ -1,13 +1,15 @@
 angular.module('timesSearchApp')
 
-.controller('SearchController', ['articleFactory', '$scope', '$location', function(DataServices, $scope, $location){
+.controller('SearchController', ['articleFactory', '$scope','$location', function(articleFactory, $scope, $location){
 
+	console.log(articleFactory);
 	//this function called when 'Search' button clicked
-	$scope.submitForm = function($scope, articleFactory){
+	$scope.submitForm = function(){
 		var query = $scope.query;
 		console.log('Form submitted. Searching NYT for: ' + query);
 		articleFactory.getArticles($scope.query).then(
 			function(results){
+				console.log(results);
 				$scope.results = results;
 			});
 		$location.path('/results');
