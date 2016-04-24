@@ -6,20 +6,17 @@ var svc_search_v2_articlesearch = function(response){
 
 angular.module('ArticleServices', [])
 
-	.constant('apiKey', 'da049a2ebfeed654a53bd38ab6573867:9:60954891')
-	.constant('url', '//api.nytimes.com/svc/search/v2/articlesearch')
-	.constant('callback', 'svc_search_v2_articlesearch')
+	.constant('key', 'da049a2ebfeed654a53bd38ab6573867:9:60954891')
+	.constant('baseUrl', '//api.nytimes.com/svc/search/v2/articlesearch')
+	.constant('callback', 'callback=svc_search_v2_articlesearch')
 
-	.factory('articleFactory', ['$http', 'apiKey', 'url', 'callback', '$route', '$q', function($http, apiKey, url, callback, $route, $q){
+	.factory('articleFactory', ['$http', 'key', 'baseUrl', 'callback', '$route', '$q', function($http, key, baseUrl, callback, $route, $q){
 
 			function getArticles(query){
 				query = query || {};
 				console.log(query);
-				var params = {'response-format': 'jsonp', 'api-key': apiKey, 'callback': callback, 'q': query}; //NYT API required format
-				
-
-				return $http.get(url, {params
-				}).then(function(result){
+				var q = query;
+				return $http.get(baseUrl + '.' + 'jsonp?' + '[' + q + ']' + callback + '&' + 'api-key=' + key).then(function(result){
 					JSON.parse(result);
 					console.log(result);
 					return result.response;
@@ -28,3 +25,6 @@ angular.module('ArticleServices', [])
 			return {getArticles: getArticles};	
 	}]);
 
+
+//expected API construction:
+//http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?[query]callback=svc_search_v2_articlesearch&api-key=da049a2ebfeed654a53bd38ab6573867:9:60954891
