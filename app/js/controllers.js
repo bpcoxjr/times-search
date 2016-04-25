@@ -8,8 +8,9 @@ angular.module('timesSearchApp')
 		var query = $scope.query;
 		var fromDate = $scope.fromDate;
 		var toDate = $scope.toDate;
+		var sortChoice = $scope.sortChoice
 		console.log('Searching NYT for: ' + query + ' between ' + fromDate + ' and ' + toDate);
-		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate).then(
+		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate, $scope.sortChoice).then(
 			function(results){
 				console.log(results);
 				$scope.results = results;
