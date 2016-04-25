@@ -12,15 +12,16 @@ angular.module('ArticleServices', [])
 
 	.factory('articleFactory', ['$http', 'key', 'baseUrl', 'callback', '$route', '$q', function($http, key, baseUrl, callback, $route, $q){
 
-			function getArticles(query){
+			function getArticles(query, fromDate, toDate){
 				query = query || {};
-				console.log(query);
 				var responseFormat = '.jsonp?';
 				var q = 'q=' + query; //NYT API-specific requirement
-				return $http.jsonp(baseUrl + responseFormat + q + callback + key).then(function(result){
-					JSONP.parse(result);
-					console.log(result);
-					return result.response;
+				var begin_date = '&begin_date=' + fromDate;
+				var end_date = '&end_date=' + toDate;
+				return $http.jsonp(baseUrl + responseFormat + q + begin_date + end_date + callback + key).then(function(result){
+					JSONP.parse(results);
+					console.log(results);
+					return results.response;
 				});
 			}
 			return {getArticles: getArticles};	

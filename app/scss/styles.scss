@@ -106,13 +106,19 @@ body {
 	height: 50px;
 	font-family: $googleFont;
 	font-size: 2.5em;
-	margin-left: 6em;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 4em;
 	border-radius: 5px;
 	border: none;
 	display: block;
 	padding-left: .5em;
 	border: $inputBorder;
+}
+
+.date-input {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .date-box {
@@ -135,7 +141,7 @@ body {
 
 .from-input {
 	display: inline-block;
-	margin-left: 15em;
+	margin-left: 10.5em;
 	margin-top: 2em;
 	label {
 		padding-right: .75em;
@@ -144,31 +150,60 @@ body {
 
 .to-input {
 	display: inline-block;
-	margin-left: 2em;
+	margin-left: 6.7em;
 	label {
 		padding-right: .75em;
 	}
 }
 
-.image-choice {
-	display: inline;
+.sort-div {
+	text-align: center;
 }
 
-.image-input {
+.sort-label {
 	display: inline-block;
-	margin-left: 10em;
+	margin-bottom: .5em;
+	//margin-left: 15em;
+	font-family: $googleFont;
+	font-size: 2em;
+	-webkit-font-smoothing: $a;
+}
+
+.sort-input-newest {
+	display: inline-block;
+	margin-left: 1em;
 	margin-top: 2em;
 	font-family: $googleFont;
 	font-size: 1.5em;
 	-webkit-font-smoothing: $a;
 	label {
 		margin-top: .25em;
-		margin-left: 1em;
+		margin-left: .5em;
+		margin-right: .25em;
+		-webkit-font-smoothing: $a;
+	}
+	h3 {
+		margin-bottom: .25em;
+		color: #000;
+	}
+}
+
+.sort-input-oldest {
+	display: inline-block;
+	margin-left: 1em;
+	margin-top: 2em;
+	font-family: $googleFont;
+	font-size: 1.5em;
+	-webkit-font-smoothing: $a;
+	label {
+		margin-top: .25em;
+		margin-left: .5em;
+		margin-right: .25em;
 		-webkit-font-smoothing: $a;
 	}
 }
 
-.check {
+/*.check {
 	float: left;
 	position: relative;
 	-webkit-appearance: none;
@@ -176,11 +211,11 @@ body {
 	height: 30px;
 	background-color: $white;
 	border: 1px solid black;
-}
+}*/
 
-input[type=checkbox]:checked {
+/*input[type=checkbox]:checked {
      background-image: url("../img/checked.png");
-}
+}*/
 
 .submit-input {
 	margin-top: 3em;
@@ -319,8 +354,7 @@ hr {
 
 .flex-boxes {
   -webkit-animation-duration: $animationTime;
-  -moz-animation-duration: $animationTime;
-  border: 2px solid red;
+  -moz-animation-duration: $animationTime; 
 
   @include clearfix;
   align-items: stretch;

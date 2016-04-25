@@ -2,20 +2,34 @@
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 angular.module('timesSearchApp')
 
-.controller('SearchController', ['articleFactory', '$scope','$location', function(articleFactory, $scope, $location){
+.controller('SearchController', ['articleFactory', '$scope', '$location', '$filter', function(articleFactory, $scope, $location, $filter){
 
 	console.log(articleFactory);
 	//this function called when 'Search' button clicked
 	$scope.submitForm = function(){
 		var query = $scope.query;
-		console.log('Form submitted. Searching NYT for: ' + query);
-		articleFactory.getArticles($scope.query).then(
+		var fromDate = $scope.fromDate;
+		var toDate = $scope.toDate;
+		console.log('Searching NYT for: ' + query + ' between ' + fromDate + ' and ' + toDate);
+		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate).then(
 			function(results){
 				console.log(results);
 				$scope.results = results;
 			});
 		$location.path('/results');
 	};
+
+	$scope.$watch('fromDate', function(convertedFromDate){
+		$scope.fromDate = $filter('date')(convertedFromDate, 'yyyy-MM-dd');
+		$scope.fromDate = convertedFromDate.replace(/\D+/g, '');
+		console.log($scope.fromDate);
+	});
+
+	$scope.$watch('toDate', function(convertedToDate){
+		$scope.toDate = $filter('date')(convertedToDate, 'yyyy-MM-dd');
+		$scope.toDate = convertedToDate.replace(/\D+/g, '');
+		console.log($scope.toDate);
+	});
 
 }])
 
@@ -31,7 +45,7 @@ angular.module('timesSearchApp')
 		console.log('Returning to blank form!');
 	};
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_1d647c6f.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_99c45ae0.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
