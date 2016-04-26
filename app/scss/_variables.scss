@@ -3,11 +3,13 @@
 /* fonts */
 $timesFont: 'sketch-gothic-school';
 $googleFont: 'Belgrano', serif;
+$headlineFont: 'Fanwood Text', serif;
 
 /*general vars */
 
 $a: antialiased;
 $backgroundColor: rgba(255, 255, 255, .8);
+$stickyBackground: url("../img/exclusive_paper.png");
 
 /* index.html vars */
 
@@ -15,6 +17,7 @@ $darker: #262626;
 $lighter: #595959;
 $medium: #4d4d4d;
 $white: #fff;
+$headerShadow: 0 -7px 6px rgba(0, 0, 0, 0.5) inset;
 $footerShadow: 0 7px 6px rgba(0, 0, 0, 0.5) inset;
 $animationTime: 2s;
 
@@ -35,6 +38,6 @@ $base-font-color: $darker !default;
 $flex-box-font: $googleFont;
 $flex-box-border-color: $light-gray;
 $flex-box-border: 3px solid $medium;
-$flex-box-background: #f2f2f2;
+$flex-box-background: url("../img/exclusive_paper.png");
 $flex-box-gutter: 0.3em;
 $flex-box-width: 18em;

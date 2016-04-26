@@ -1,5 +1,5 @@
 <div class="results-container col-md-12">
-	<div class="animated fadeIn results-header col-md-12">
+	<div class="animated fadeIn results-header col-md-12" id="stickyResults">
 		<div class="weather-report col-md-3">
 			<span><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:10001.5.99999&bannertypeclick=wu_travel_traveler1" title="New York, New York Weather Forecast" target="_blank"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_travel_traveler1&airportcode=KJFK&ForcedCity=New York&ForcedState=NY&zip=10018&language=EN" alt="Find more about Weather in New York, NY" width="160"/></a><br></span>
 		</div>
@@ -13,36 +13,15 @@
 		</div>
 	</div>
 </div>
-<div class="animated fadeIn flex-boxes" infinite-scroll="loadMoreResults()" ng-repeat="result in results">
-  <a href="{{ result.web_url }}" target="_blank" class="flex-box flex-box-big" id="flexbox" >
-    <h1 class="headline">{{ result.headline.main }}</h1>
-    <h2>{{ result.byline.original }}</h2>
-    <p class="abstract">{{ result.abstract }}</p>
-    <h2 class="published-header">Published on:</h2><p class="published-date">{{ result.pub_date | date: 'MMMM dd, yyyy'}}</p>
-  </a>
-  <!--<a href="javascript:void(0)" class="flex-box">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png" alt="">
-    <h1 class="flex-title">Flex Box Item</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
-  </a>
-  <a href="javascript:void(0)" class="flex-box">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="">
-    <h1 class="flex-title">A Flex Box Item</h1>
-    <p>Lorem adipisicing elit. Voluptas consectetur tempora quis nam, officia tenetur blanditiis in illo dolor?</p>
-  </a>
-  <a href="javascript:void(0)" class="flex-box flex-box-big">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
-    <h1 class="flex-title">Another Wide Item</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quis ipsum, officia, aperiam tenetur dolor molestiae voluptate perferendis dolorem vel ex, unde fugit blanditiis sapiente.</p>
-  </a>
-  <a href="javascript:void(0)" class="flex-box">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
-    <h1 class="flex-title">Flex Box Item</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo obcaecati in provident illo.</p>
-  </a>
-  <a href="javascript:void(0)" class="flex-box">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="">
-    <h1 class="flex-title">Last Flex Box Item</h1>
-    <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
-  </a>-->
+<div class="infinite-container" infinite-scroll="loadMoreResults()">
+  <div class="animated fadeIn flex-boxes" ng-repeat="result in results">
+    <a href="{{ result.web_url }}" target="_blank" class="flex-box flex-box-big" id="flexbox" >
+      <h1 class="headline">{{ result.headline.main }}</h1>
+      <h2>{{ result.byline.original }}</h2>
+      <h3>Continue reading at nytimes.com...</h3>
+      <p class="snippet">{{ result.snippet }}</p>
+      <h2 class="published-header">Published on:</h2><p class="published-date">{{ result.pub_date | date: 'MMMM dd, yyyy'}}</p>
+    </a>
+  </div>
 </div>
+

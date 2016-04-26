@@ -33,7 +33,7 @@ angular.module('timesSearchApp')
 
 	$scope.$watch('toDate', function(convertedToDate){
 		if(!convertedToDate)return;
-		console.log(convertedToDate);
+		//console.log(convertedToDate);
 		$scope.toDateforApi = $filter('date')(new Date(convertedToDate), 'yyyy-MM-dd');
 		$scope.toDateforApi = $scope.toDateforApi.replace(/\D+/g, '');
 		//console.log($scope.toDateforApi);
@@ -60,4 +60,54 @@ angular.module('timesSearchApp')
       		$rootScope.results.push(last + i);
     	}
 	};
+
+	//make results header stick to top of page when scrolled to
+	var $window = $(window);
+		$stickyElement = $('#stickyResults'),
+		elementTop = $stickyElement.offset().top;
+
+	$window.scroll(function(){
+		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
+	});
+
+
+
+	// Hide Header on on scroll down
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = $('#masthead').outerHeight();
+
+	$(window).scroll(function(event){
+	    didScroll = true;
+	});
+
+	setInterval(function() {
+	    if (didScroll) {
+	        hasScrolled();
+	        didScroll = false;
+	    }
+	}, 200);
+
+	function hasScrolled() {
+	    var st = $(this).scrollTop();
+	    
+	    // Make sure they scroll more than delta
+	    if(Math.abs(lastScrollTop - st) <= delta)
+	        return;
+	    
+	    // If they scrolled down and are past the navbar, add class .nav-up.
+	    // This is necessary so you never see what is "behind" the navbar.
+	    if (st > lastScrollTop && st > navbarHeight){
+	        // Scroll Down
+	        $('#masthead').removeClass('masthead-down').addClass('masthead-up');
+	    } else {
+	        // Scroll Up
+	        if(st + $(window).height() < $(document).height()) {
+	            $('#masthead').removeClass('masthead-up').addClass('masthead-down');
+	        }
+	    }
+	    
+	    lastScrollTop = st;
+	}
 }]);

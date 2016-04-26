@@ -15,25 +15,40 @@ html {
 }
 
 body {
+	min-width: 100%;
 	background-image: url("../img/skyline.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
-.masthead {
+.masthead-down {
+	background: #ffffff;
+	box-shadow: $headerShadow;
+	top: 0;
 	min-width: 100%;
 	min-height: 6em;
+	position: fixed;
+	z-index: 2;
+	transition: top 0s ease-in-out;
+	-webkit-transition: top 0s ease-in-out;
 	li {
 		animation-duration: $animationTime;
 		display: inline-block;
 	}
 }
 
+//hide nav header when user scrolls down
+.masthead-up {
+	height: -6em;
+}
+
 .big-title {
 	font-family: $timesFont;
-	font-size: 5.5em;
-	margin-top: .15em;
+	color: $darker;
+	font-size: 4em;
 	margin-left: .25em;
+	padding-top: .20em;
 }
 
 .masthead-links {
@@ -41,18 +56,22 @@ body {
 	font-family: $googleFont;
 	font-size: 2em;
 	float: right;
-	padding-right: 2em;
-	padding-top: .75em;
+	padding: 1em 2em 0em 0em;
 	color: $darker;
 	-webkit-font-smoothing: $a;
+	text-decoration: none;
 	&:hover {
 		color: $white;
 	}
 }
 
+.view {
+	margin-top: 8em;
+}
 
 .footer {
-	position: absolute;
+	clear: both;
+	position: fixed;
 	min-width: 100%;
 	padding-top: 15px;
 	bottom: 0;
@@ -63,6 +82,7 @@ body {
 	color: $medium;
 	background-color: $white;
 	box-shadow: $footerShadow;
+	z-index: 9 !important;
 	p {
 		animation-duration: $animationTime;
 		margin-bottom: .5em;
@@ -203,20 +223,6 @@ body {
 	}
 }
 
-/*.check {
-	float: left;
-	position: relative;
-	-webkit-appearance: none;
-	width: 30px;
-	height: 30px;
-	background-color: $white;
-	border: 1px solid black;
-}*/
-
-/*input[type=checkbox]:checked {
-     background-image: url("../img/checked.png");
-}*/
-
 .submit-input {
 	margin-top: 3em;
 	margin-bottom: 4em;
@@ -282,7 +288,16 @@ body {
 	position: relative;
 	border-radius: 5px;
 	animation-duration: $animationTime;
-	
+}
+
+#stickyResults.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	z-index: 2;
+	background: $stickyBackground;
+	opacity: 1;
 }
 
 .weather-report {
@@ -331,7 +346,7 @@ hr {
 	text-align: center;
 	position: absolute;
 	top: 20%;
-	left: 85%;
+	left: 86%;
     transform: translate(-50%, -50%);  
     button {
 		font-family: $googleFont;
@@ -351,7 +366,7 @@ hr {
 }
 
 .headline {
-	font-family: $googleFont;
+	font-family: $headlineFont;
 	font-size: 2.75em;
 	color: #404040;
 	line-height: 1.25em;
@@ -359,15 +374,15 @@ hr {
 	padding-bottom: .25em;
 }
 
-.abstract {
-	font-family: $googleFont;
+.snippet {
+	font-family: $headlineFont;
 	font-size: 1.25em;
 	text-align: left;
 	padding: 1em 0em 1em 0em;
 }
 
 .published-header {
-	font-family: $googleFont;
+	font-family: $headlineFont;
 	font-size: 1.25em;
 	display: inline-block;
 	padding-right: .25em;
@@ -394,7 +409,8 @@ hr {
 
   .flex-box {
     align-self: stretch;
-    background: $backgroundColor;
+    background-image: $flex-box-background;
+    opacity: 0.9;
     border-radius: $base-border-radius;
     display: block;
     flex: 2 2 15em;
@@ -402,19 +418,34 @@ hr {
     padding: 1em 2em .5em 2em;
     border: $flex-box-border;
     text-decoration: none;
+    z-index: 1;
 
-        &:focus,
-        &:hover {
-          background-image: url("../img/exclusive_paper.png");
-        }
-    }
+	    &:focus,
+	    &:hover {
+			background: rgba(60, 60, 60, 0.9);
+			opacity: 1;
+			h3 {
+				opacity: 1;
+				visibility: visible;
+				font-size: 3em;
+			}
+		}
+	}
 
-    img {
-      display: block;
-      height: 3em;
-      margin: 0 auto 1em;
-      opacity: 0.4;
-    }
+	h2 {
+		font-family: $headlineFont;
+		font-size: 1em;
+		color: #404040;
+	}
+
+	h3 {
+		color: #ffffff;
+		opacity: 0;
+		font-family: $googleFont;
+		font-size: 0em;
+		-webkit-font-smoothing: $a;
+		visibility: hidden;
+	}
 
     .flex-title {
       color: $darker;
