@@ -105,7 +105,7 @@ body {
 
 .input-box {
 	width: 20em;
-	height: 50px;
+	height: 65px;
 	font-family: $googleFont;
 	font-size: 2.5em;
 	margin-left: auto;
@@ -354,6 +354,34 @@ hr {
     }
 }
 
+.headline {
+	font-family: $googleFont;
+	font-size: 2.75em;
+	color: #404040;
+	line-height: 1.25em;
+	text-align: center;
+	padding-bottom: .25em;
+}
+
+.abstract {
+	font-family: $googleFont;
+	font-size: 1.25em;
+	text-align: left;
+	padding: 1em 0em 1em 0em;
+}
+
+.published-header {
+	font-family: $googleFont;
+	font-size: 1.25em;
+	display: inline-block;
+	padding-right: .25em;
+}
+
+.published-date {
+	font-size: 1.5em;
+	display: inline-block;
+}
+
 /* Refills flex box styles */
 
 .flex-boxes {
@@ -387,7 +415,7 @@ hr {
         -ms-flex: 2 2 15em;
             flex: 2 2 15em;
     margin: $flex-box-gutter;
-    padding: 2em 2em 3em 2em;
+    padding: 1em 2em .5em 2em;
     border: $flex-box-border;
     text-decoration: none;
 

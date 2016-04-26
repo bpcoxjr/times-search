@@ -1,5 +1,5 @@
 <div class="search-container">
-	<form id="search-form" action="">	
+	<form id="search-form" ng-submit="submitForm()">	
 		<div class="search-input">
 			<input ng-model="query" class="input-box" type="text" placeholder="Enter search term(s)..." max-length="25" autofocus>
 		</div>
@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="submit-input">
-			<button ng-click="submitForm()" class= "submit-button" type="submit">Search</button>
+			<button class= "submit-button" type="submit">Search</button>
 		</div>
 	</form>
 </div>
