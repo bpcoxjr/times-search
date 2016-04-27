@@ -411,7 +411,7 @@ hr {
     clear: both;
     content: "";
     display: table; }
-  .flex-boxes .flex-box-small {
+  .flex-boxes .flex-box {
     align-self: stretch;
     background-image: url("../img/exclusive_paper.png");
     opacity: 0.9;
@@ -423,11 +423,11 @@ hr {
     border: 3px solid #4d4d4d;
     text-decoration: none;
     z-index: 1; }
-    .flex-boxes .flex-box-small:focus, .flex-boxes .flex-box-small:hover {
+    .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
       background: rgba(60, 60, 60, 0.9);
       opacity: 1;
       border: 2px solid #ffffff; }
-      .flex-boxes .flex-box-small:focus h3, .flex-boxes .flex-box-small:hover h3 {
+      .flex-boxes .flex-box:focus h3, .flex-boxes .flex-box:hover h3 {
         opacity: 1;
         visibility: visible;
         font-size: 3em; }
@@ -486,11 +486,6 @@ hr {
     font-size: 0em;
     -webkit-font-smoothing: antialiased;
     visibility: hidden; }
-  .flex-boxes .flex-title {
-    color: #262626;
-    margin-bottom: 0.5em;
-    font-family: "Belgrano", serif;
-    font-size: 1.75em; }
   .flex-boxes p {
     color: #595959;
     line-height: 1.5em;
