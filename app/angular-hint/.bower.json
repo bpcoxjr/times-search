@@ -1,0 +1,35 @@
+{
+  "name": "angular-hint",
+  "version": "0.3.0",
+  "homepage": "https://github.com/welbornio/angular-hint-bower",
+  "authors": [
+    "https://github.com/angular/angular-hint/graphs/contributors"
+  ],
+  "description": "WIP: run-time hinting for AngularJS applications",
+  "main": "./dist/hint.js",
+  "keywords": [
+    "angular",
+    "hint",
+    "lint",
+    "tool",
+    "quality"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "2e53c85fa72e2f3a846c3927eaf0fdb212216722"
+  },
+  "_source": "https://github.com/welbornio/angular-hint-bower.git",
+  "_target": "^0.3.0",
+  "_originalSource": "angular-hint-bower",
+  "_direct": true
+}
