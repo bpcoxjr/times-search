@@ -23,6 +23,7 @@ angular.module('timesSearchApp')
 		$location.path('/results');
 	};
 
+	//convert user date input to format required by NYT API
 	$scope.$watch('fromDate', function(convertedFromDate){
 		if(!convertedFromDate)return;
 		//console.log(convertedFromDate);
@@ -45,24 +46,24 @@ angular.module('timesSearchApp')
 	//date variable to show current date @ top of results page
 	$rootScope.today = new Date();
 
-	console.log($rootScope.results);
-
 	//function executes when user clicks 'Go Back' button
 	$scope.startOver = function(){
 		document.getElementById("search-form").reset();
 		$rootScope.results = [];
 	};
 
-	//function continuously loads more results as user scrolls 
-	$scope.loadMoreResults = function(){
-		var last = $rootScope.results[$rootScope.results.length - 1];
-    	for(var i = 1; i <= 10; i++) {
-      		$rootScope.results.push(last + i);
-    	}
-	};
+	//
+	var classes = ['', 'flex-box-big'];
+
+    $('.randomFlexbox').each(function(){
+        $(this).addClass(classes[Math.round(Math.random() * (classes.length-1))]);
+        console.log("I'm adding a class!");
+    });
+
+   
 
 	//make results header stick to top of page when scrolled to
-	var $window = $(window);
+	var $window = $(window),
 		$stickyElement = $('#stickyResults'),
 		elementTop = $stickyElement.offset().top;
 
@@ -70,12 +71,10 @@ angular.module('timesSearchApp')
 		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
 	});
 
-
-
-	// Hide Header on on scroll down
+	// Hide and show nav header based on user scrolling
 	var didScroll;
 	var lastScrollTop = 0;
-	var delta = 5;
+	var delta = 1;
 	var navbarHeight = $('#masthead').outerHeight();
 
 	$(window).scroll(function(event){
@@ -110,4 +109,10 @@ angular.module('timesSearchApp')
 	    
 	    lastScrollTop = st;
 	}
+
+	$scope.loadMoreResults = function() {
+    articleFactory(function(results){
+      $scope.results=results;
+    })
+  };
 }]);

@@ -13,14 +13,17 @@
 		</div>
 	</div>
 </div>
-<div class="infinite-container" infinite-scroll="loadMoreResults()">
+<div class="infinite-container" infinite-scroll="loadMoreResults()" infinite-scroll-disabled="loadMoreResults.busy">
   <div class="animated fadeIn flex-boxes" ng-repeat="result in results">
-    <a href="{{ result.web_url }}" target="_blank" class="flex-box flex-box-big" id="flexbox" >
+    <a href="{{ result.web_url }}" target="_blank" class="flex-box randomFlexbox">
       <h1 class="headline">{{ result.headline.main }}</h1>
       <h2>{{ result.byline.original }}</h2>
       <h3>Continue reading at nytimes.com...</h3>
       <p class="snippet">{{ result.snippet }}</p>
-      <h2 class="published-header">Published on:</h2><p class="published-date">{{ result.pub_date | date: 'MMMM dd, yyyy'}}</p>
+      <h2 class="published-header">Published on:</h2>
+      <p class="published-date">{{ result.pub_date | date: 'MMMM dd, yyyy'}}</p>
+      <h2 class="section-header">in</h2>
+      <p class="section-name">{{ result.section_name }}</p>
     </a>
   </div>
 </div>

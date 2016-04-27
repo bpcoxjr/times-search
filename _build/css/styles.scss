@@ -23,15 +23,17 @@ body {
 }
 
 .masthead-down {
-	background: #ffffff;
+	background: $white;
 	box-shadow: $headerShadow;
 	top: 0;
 	min-width: 100%;
 	min-height: 6em;
 	position: fixed;
-	z-index: 2;
-	transition: 3s ease-in-out;
-	-webkit-transition: 3s ease-in-out;
+	z-index: 3;
+	transition-timing-function: top 0s ease-out;
+	transition-timing-function: top 3s ease-in;
+	-webkit-transition-timing-function: top 0s ease-out;
+	-webkit-transition-timing-function: top 3s ease-in;
 	li {
 		-webkit-animation-duration: $animationTime;
 		        animation-duration: $animationTime;
@@ -41,11 +43,12 @@ body {
 
 //hide nav header when user scrolls down
 .masthead-up {
-	min-height: -6em;
+	height: -6em;
 }
 
 .big-title {
 	font-family: $timesFont;
+	color: $darker;
 	font-size: 4em;
 	margin-left: .25em;
 	padding-top: .20em;
@@ -59,8 +62,9 @@ body {
 	padding: 1em 2em 0em 0em;
 	color: $darker;
 	-webkit-font-smoothing: $a;
+	text-decoration: none;
 	&:hover {
-		color: $white;
+		color: $lighter;
 	}
 }
 
@@ -289,7 +293,16 @@ body {
 	border-radius: 5px;
 	-webkit-animation-duration: $animationTime;
 	        animation-duration: $animationTime;
-	
+}
+
+#stickyResults.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	z-index: 2;
+	background: $stickyBackground;
+	opacity: 1;
 }
 
 .weather-report {
@@ -386,6 +399,14 @@ hr {
 	display: inline-block;
 }
 
+.section-header {
+	display: inline-block;
+}
+
+.section-name {
+	display: inline-block;
+}
+
 /* Refills flex box styles */
 
 .flex-boxes {
@@ -412,8 +433,8 @@ hr {
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
-    background-image: url("../img/exclusive_paper.png");
-    //background: $backgroundColor;
+    background-image: $flex-box-background;
+    opacity: 0.9;
     border-radius: $base-border-radius;
     display: block;
     -webkit-flex: 2 2 15em;
@@ -423,11 +444,13 @@ hr {
     padding: 1em 2em .5em 2em;
     border: $flex-box-border;
     text-decoration: none;
+    z-index: 1;
 
 	    &:focus,
 	    &:hover {
 			background: rgba(60, 60, 60, 0.9);
 			opacity: 1;
+			border: 2px solid #ffffff;
 			h3 {
 				opacity: 1;
 				visibility: visible;
@@ -466,11 +489,59 @@ hr {
       font-size: 1em;
       -webkit-font-smoothing: $a;
     }
-  
 
-  .flex-box-big {
-    -webkit-flex: 1 1 40em;
-        -ms-flex: 1 1 40em;
-            flex: 1 1 40em;
-  }
+  	.flex-box-big {
+    	-webkit-flex: 1 1 40em;
+    	    -ms-flex: 1 1 40em;
+    	        flex: 1 1 40em;
+    	-webkit-align-self: stretch;
+    	    -ms-flex-item-align: stretch;
+    	        align-self: stretch;
+	    background-image: $flex-box-background;
+	    opacity: 0.9;
+	    border-radius: $base-border-radius;
+	    display: block;
+	    flex: 1 1 40em;
+	    margin: $flex-box-gutter;
+	    padding: 1em 2em .5em 2em;
+	    border: $flex-box-border;
+	    text-decoration: none;
+	    z-index: 1;
+
+	    &:focus,
+	    &:hover {
+			background: rgba(60, 60, 60, 0.9);
+			opacity: 1;
+			border: 2px solid #ffffff;
+			h3 {
+				opacity: 1;
+				visibility: visible;
+				font-size: 3em;
+			}
+		}
+	}
+
+	h2 {
+		font-family: $headlineFont;
+		font-size: 1em;
+		color: #404040;
+	}
+
+	h3 {
+		color: #ffffff;
+		opacity: 0;
+		font-family: $googleFont;
+		font-size: 0em;
+		-webkit-font-smoothing: $a;
+		visibility: hidden;
+	}
+
+    p {
+      color: $lighter;
+      line-height: 1.5em;
+      margin: auto;
+      font-family: $flex-box-font;
+      font-size: 1em;
+      -webkit-font-smoothing: $a;
+    } 
 }

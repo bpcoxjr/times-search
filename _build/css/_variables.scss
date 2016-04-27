@@ -9,6 +9,7 @@ $headlineFont: 'Fanwood Text', serif;
 
 $a: antialiased;
 $backgroundColor: rgba(255, 255, 255, .8);
+$stickyBackground: url("../img/exclusive_paper.png");
 
 /* index.html vars */
 
@@ -37,6 +38,6 @@ $base-font-color: $darker !default;
 $flex-box-font: $googleFont;
 $flex-box-border-color: $light-gray;
 $flex-box-border: 3px solid $medium;
-$flex-box-background: #f2f2f2;
+$flex-box-background: url("../img/exclusive_paper.png");
 $flex-box-gutter: 0.3em;
 $flex-box-width: 18em;

@@ -23,15 +23,17 @@ body {
 }
 
 .masthead-down {
-	background: #ffffff;
+	background: $white;
 	box-shadow: $headerShadow;
 	top: 0;
 	min-width: 100%;
 	min-height: 6em;
 	position: fixed;
-	z-index: 2;
-	transition: top 0s ease-in-out;
-	-webkit-transition: top 0s ease-in-out;
+	z-index: 3;
+	transition-timing-function: top 0s ease-out;
+	transition-timing-function: top 3s ease-in;
+	-webkit-transition-timing-function: top 0s ease-out;
+	-webkit-transition-timing-function: top 3s ease-in;
 	li {
 		animation-duration: $animationTime;
 		display: inline-block;
@@ -61,7 +63,7 @@ body {
 	-webkit-font-smoothing: $a;
 	text-decoration: none;
 	&:hover {
-		color: $white;
+		color: $lighter;
 	}
 }
 
@@ -393,6 +395,14 @@ hr {
 	display: inline-block;
 }
 
+.section-header {
+	display: inline-block;
+}
+
+.section-name {
+	display: inline-block;
+}
+
 /* Refills flex box styles */
 
 .flex-boxes {
@@ -424,6 +434,7 @@ hr {
 	    &:hover {
 			background: rgba(60, 60, 60, 0.9);
 			opacity: 1;
+			border: 2px solid #ffffff;
 			h3 {
 				opacity: 1;
 				visibility: visible;
@@ -462,9 +473,55 @@ hr {
       font-size: 1em;
       -webkit-font-smoothing: $a;
     }
-  
 
-  .flex-box-big {
-    flex: 1 1 40em;
-  }
+  	.flex-box-big {
+    	flex: 1 1 40em;
+    	align-self: stretch;
+	    background-image: $flex-box-background;
+	    opacity: 0.9;
+	    border-radius: $base-border-radius;
+	    display: block;
+	    flex: 1 1 40em;
+	    margin: $flex-box-gutter;
+	    padding: 1em 2em .5em 2em;
+	    border: $flex-box-border;
+	    text-decoration: none;
+	    z-index: 1;
+
+	    &:focus,
+	    &:hover {
+			background: rgba(60, 60, 60, 0.9);
+			opacity: 1;
+			border: 2px solid #ffffff;
+			h3 {
+				opacity: 1;
+				visibility: visible;
+				font-size: 3em;
+			}
+		}
+	}
+
+	h2 {
+		font-family: $headlineFont;
+		font-size: 1em;
+		color: #404040;
+	}
+
+	h3 {
+		color: #ffffff;
+		opacity: 0;
+		font-family: $googleFont;
+		font-size: 0em;
+		-webkit-font-smoothing: $a;
+		visibility: hidden;
+	}
+
+    p {
+      color: $lighter;
+      line-height: 1.5em;
+      margin: auto;
+      font-family: $flex-box-font;
+      font-size: 1em;
+      -webkit-font-smoothing: $a;
+    } 
 }

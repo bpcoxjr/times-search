@@ -25,6 +25,7 @@ angular.module('timesSearchApp')
 		$location.path('/results');
 	};
 
+	//convert user date input to format required by NYT API
 	$scope.$watch('fromDate', function(convertedFromDate){
 		if(!convertedFromDate)return;
 		//console.log(convertedFromDate);
@@ -47,26 +48,35 @@ angular.module('timesSearchApp')
 	//date variable to show current date @ top of results page
 	$rootScope.today = new Date();
 
-	console.log($rootScope.results);
-
 	//function executes when user clicks 'Go Back' button
 	$scope.startOver = function(){
 		document.getElementById("search-form").reset();
 		$rootScope.results = [];
 	};
 
-	//function continuously loads more results as user scrolls 
-	$scope.loadMoreResults = function(){
-		var last = $rootScope.results[$rootScope.results.length - 1];
-    	for(var i = 1; i <= 10; i++) {
-      		$rootScope.results.push(last + i);
-    	}
-	};
+	//
+	var classes = ['', 'flex-box-big'];
 
-	// Hide Header on on scroll down
+    $('.randomFlexbox').each(function(){
+        $(this).addClass(classes[Math.round(Math.random() * (classes.length-1))]);
+        console.log("I'm adding a class!");
+    });
+
+   
+
+	//make results header stick to top of page when scrolled to
+	var $window = $(window),
+		$stickyElement = $('#stickyResults'),
+		elementTop = $stickyElement.offset().top;
+
+	$window.scroll(function(){
+		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
+	});
+
+	// Hide and show nav header based on user scrolling
 	var didScroll;
 	var lastScrollTop = 0;
-	var delta = 5;
+	var delta = 1;
 	var navbarHeight = $('#masthead').outerHeight();
 
 	$(window).scroll(function(event){
@@ -78,7 +88,7 @@ angular.module('timesSearchApp')
 	        hasScrolled();
 	        didScroll = false;
 	    }
-	}, 0);
+	}, 200);
 
 	function hasScrolled() {
 	    var st = $(this).scrollTop();
@@ -101,8 +111,14 @@ angular.module('timesSearchApp')
 	    
 	    lastScrollTop = st;
 	}
+
+	$scope.loadMoreResults = function() {
+    articleFactory(function(results){
+      $scope.results=results;
+    })
+  };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_1ade99b3.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_727e5b4a.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
