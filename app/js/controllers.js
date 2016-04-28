@@ -53,10 +53,10 @@ angular.module('timesSearchApp')
 		$location.path('/home');
 	};
 
-    var classes = ['', 'flex-box-big'];
+    var classes = ['', 'flexbox-big'];
 
     $('.random-flexbox').each(function(){
-        $(this).addClass(classes[Math.floor(Math.random() * (classes.length))]);
+        $(this).addClass(classes[Math.floor(Math.random() * (classes.length-1))]);
         console.log("I'm adding a class!");
     });
 
