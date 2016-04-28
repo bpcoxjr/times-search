@@ -41,7 +41,7 @@ angular.module('timesSearchApp')
 	});
 }])
 
-.controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$location', function($scope, $rootScope, $location){
+.controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$location', function(articleFactory, $scope, $rootScope, $location){
 	
 	//date variable to show current date @ top of results page
 	$rootScope.today = new Date();
@@ -50,17 +50,15 @@ angular.module('timesSearchApp')
 	$scope.startOver = function(){
 		document.getElementById("search-form").reset();
 		$rootScope.results = [];
+		$location.path('/home');
 	};
 
-	//
-	var classes = ['', 'flex-box-big'];
+    var classes = ['', 'flex-box-big'];
 
-    $('.randomFlexbox').each(function(){
-        $(this).addClass(classes[Math.round(Math.random() * (classes.length-1))]);
+    $('.random-flexbox').each(function(){
+        $(this).addClass(classes[Math.floor(Math.random() * (classes.length))]);
         console.log("I'm adding a class!");
     });
-
-   
 
 	//make results header stick to top of page when scrolled to
 	var $window = $(window),
@@ -110,9 +108,8 @@ angular.module('timesSearchApp')
 	    lastScrollTop = st;
 	}
 
-	$scope.loadMoreResults = function() {
-    articleFactory(function(results){
-      $scope.results=results;
-    })
-  };
+	/*$scope.loadMoreResults = function() {
+    	articleFactory(function(results){
+      	$scope.results=results;
+    });*/
 }]);

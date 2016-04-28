@@ -1,31 +1,21 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-angular.module('timesSearchApp', ['ArticleServices', 'ngRoute', 'infinite-scroll'])
+angular.module('timesSearchApp')
 
-.config(['$locationProvider', '$routeProvider',
-	function($locationProvider, $routeProvider){
-		$routeProvider
-		.when("/home", {
-			templateUrl: "./partials/search.html",
-			controller: "SearchController",
-		})
-		.when("/about", {
-			templateUrl: "./partials/about.html",
-			controller: "SearchController",
-		})
-		.when("/results", {
-			templateUrl: "./partials/results.html",
-			controller: "ResultsController",
-		})
-		.otherwise({
-			redirectTo: "/home"
-		});
-	}
-]);
-
-
-
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c843b67c.js","/")
+//generates different flexbox sizes for articles by assigning class randomly
+.directive('ngRandomFlexbox', function (){
+	return {
+		restrict: 'EA',
+		replace: false,
+		scope: {
+			ngClasses: '=ngRandomFlexbox'
+		},
+		link: function(scope, elem, attr){
+			elem.addClass(scope.ngClasses[Math.floor(Math.random() * (scope.ngClasses.length))]);
+		}
+	};
+});
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_65493e0a.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

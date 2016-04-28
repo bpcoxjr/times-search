@@ -1,3 +1,4 @@
+
 /* Sass variables */
 
 @import "variables";
@@ -454,7 +455,7 @@ hr {
 			h3 {
 				opacity: 1;
 				visibility: visible;
-				font-size: 3em;
+				font-size: 1em;
 			}
 		}
 	}
@@ -490,58 +491,9 @@ hr {
       -webkit-font-smoothing: $a;
     }
 
-  	.flex-box-big {
-    	-webkit-flex: 1 1 40em;
-    	    -ms-flex: 1 1 40em;
-    	        flex: 1 1 40em;
-    	-webkit-align-self: stretch;
-    	    -ms-flex-item-align: stretch;
-    	        align-self: stretch;
-	    background-image: $flex-box-background;
-	    opacity: 0.9;
-	    border-radius: $base-border-radius;
-	    display: block;
-	    flex: 1 1 40em;
-	    margin: $flex-box-gutter;
-	    padding: 1em 2em .5em 2em;
-	    border: $flex-box-border;
-	    text-decoration: none;
-	    z-index: 1;
-
-	    &:focus,
-	    &:hover {
-			background: rgba(60, 60, 60, 0.9);
-			opacity: 1;
-			border: 2px solid #ffffff;
-			h3 {
-				opacity: 1;
-				visibility: visible;
-				font-size: 3em;
-			}
-		}
+  	.flexbox-big {
+	    -webkit-flex: 1 1 40em;
+	        -ms-flex: 1 1 40em;
+	            flex: 1 1 40em;
 	}
-
-	h2 {
-		font-family: $headlineFont;
-		font-size: 1em;
-		color: #404040;
-	}
-
-	h3 {
-		color: #ffffff;
-		opacity: 0;
-		font-family: $googleFont;
-		font-size: 0em;
-		-webkit-font-smoothing: $a;
-		visibility: hidden;
-	}
-
-    p {
-      color: $lighter;
-      line-height: 1.5em;
-      margin: auto;
-      font-family: $flex-box-font;
-      font-size: 1em;
-      -webkit-font-smoothing: $a;
-    } 
 }

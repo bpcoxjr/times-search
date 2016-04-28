@@ -5,7 +5,7 @@ angular.module('ArticleServices', [])
 	.constant('key', '&api-key=da049a2ebfeed654a53bd38ab6573867:9:60954891')
 	.constant('baseUrl', '//api.nytimes.com/svc/search/v2/articlesearch')
 	
-	.factory('articleFactory', ['$http', 'key', 'baseUrl', '$route', '$q', function($http, key, baseUrl, $route, $q){
+	.factory('articleFactory', ['$http', '$rootScope', 'key', 'baseUrl', '$route', '$q', function($http, $rootScope, key, baseUrl, $route, $q){
 
 				
 
@@ -24,8 +24,10 @@ angular.module('ArticleServices', [])
 		}
 		return {getArticles: getArticles};	
 
+		$rootscope.results = results;
+
 		//infinite scrolling
-		var results = [];
+		/*var results = [];
 		var busy = false;
 
 		function loadMoreResults(query, fromDate, toDate, fromDateforApi, toDateforApi, sortChoice){
@@ -49,6 +51,6 @@ angular.module('ArticleServices', [])
 
 			busy = false;
 		};
-		return {loadMoreResults: loadMoreResults};
-	}]);
+		return {loadMoreResults: loadMoreResults};*/
+}]);
 
