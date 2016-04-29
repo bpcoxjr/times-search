@@ -7,23 +7,21 @@ angular.module('timesSearchApp')
 
 	//this function called when 'Search' button clicked
 	$scope.submitForm = function(){
-		var query = $scope.query;
-	    var fromDate = $scope.fromDate;
-		var toDate = $scope.toDate;
-		var sortChoice = $scope.sortChoice;
-		var toDateforApi = $scope.toDateforApi;
-		var fromDateforApi= $scope.fromDateforApi;
-		console.log('Searching NYT for ' + query + ' between ' + fromDateforApi + ' and ' + toDateforApi);
+		$rootScope.query = $scope.query;
+	    $rootScope.fromDate = $scope.fromDate;
+		$rootScope.toDate = $scope.toDate;
+		$rootScope.sortChoice = $scope.sortChoice;
+		$rootScope.toDateforApi = $scope.toDateforApi;
+		$rootScope.fromDateforApi= $scope.fromDateforApi;
+		//console.log('Searching NYT for ' + query + ' between ' + fromDateforApi + ' and ' + toDateforApi);
 		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate, $scope.fromDateforApi, $scope.toDateforApi, $scope.sortChoice).then(
 			function(results){
 				$rootScope.results = $rootScope.results.concat(results.docs);
-				console.log($srootScope.results);
+				console.log($rootScope.results);
 			});
 		$location.path('/results');
 
-		//set minimum date on 'to date' input so 'to date' has to be later than 'from date'
-		$rootScope.moreThanFrom = $filter('date')(($rootScope.fromDate), 'yyyy-MM-dd');
-		console.log($scope.moreThanFrom);
+		
 	};
 
 	//convert user date input to format required by NYT API
@@ -31,17 +29,23 @@ angular.module('timesSearchApp')
 		if(!convertedFromDate)return;
 		$rootScope.fromDateforApi = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
 		$rootScope.fromDateforApi = $rootScope.fromDateforApi.replace(/\D+/g, '');
+		$scope.moreThanFrom = $filter('date')((convertedFromDate), 'yyyy-MM-dd');
 	});
 
 	$scope.$watch('toDate', function(convertedToDate){
 		if(!convertedToDate)return;
 		$rootScope.toDateforApi = $filter('date')(new Date(convertedToDate), 'yyyy-MM-dd');
 		$rootScope.toDateforApi = $rootScope.toDateforApi.replace(/\D+/g, '');
+		$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
 	});
 
 	//set max date attribute input to current date
-	$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
+	
 	//console.log($scope.maxDate);
+
+	//set minimum date on 'to date' input so 'to date' has to be later than 'from date'
+	
+	console.log($scope.moreThanFrom);
 }])
 
 .controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$http', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
@@ -64,17 +68,16 @@ angular.module('timesSearchApp')
    			return 'flex-box';
    		}
    };*/
-
-   $scope.classController = function($scope){
-	   	$scope.eventClass = function(){
-	   		if (Math.random() > 0.5) {
-	   			return 'flex-box ' + 'flexbox-big';
-	   		}
-	   		else {
-	   			return 'flex-box';
-	   		}
-   		};
-   };
+   
+   	$scope.eventClass = function(){
+   		if (Math.random() > 0.5) {
+   			return 'flex-box ' + 'flexbox-big';
+   		}
+   		else {
+   			return 'flex-box';
+   		}
+	};
+  
 
 	//make results header stick to top of page when scrolled to
 	var $window = $(window),
@@ -86,7 +89,7 @@ angular.module('timesSearchApp')
 	});
 
 	//infinite Scrolling
-    /*$scope.loadMoreResults = function() {
+    $scope.loadMoreResults = function() {
     	console.log("Loading more results!");
     	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
 			function(results){
@@ -94,5 +97,5 @@ angular.module('timesSearchApp')
 				console.log($rootScope.results);
 			});
     	return($rootScope.results);
-    };*/
+    };
 }]);
