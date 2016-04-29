@@ -19,6 +19,7 @@ angular.module('ArticleServices', [])
 			var sort = '&sort=' + sortChoice;
 			return $http.get(baseUrl + responseFormat + q + begin_date + end_date + sort + key).then(function(results){
 				console.log(results);
+				//add random class to flex-boxes
 				for(i=0; i < results.data.response.docs.length; i++){
 					results.data.response.docs[i].class = (Math.random() > 0.5 ? 'flexbox-big ' + 'flex-box' : 'flex-box');
 				}

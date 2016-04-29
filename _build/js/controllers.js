@@ -22,8 +22,6 @@ angular.module('timesSearchApp')
 				console.log($rootScope.results);
 			});
 		$location.path('/results');
-
-		
 	};
 
 	//convert user date input to format required by NYT API
@@ -40,14 +38,12 @@ angular.module('timesSearchApp')
 		$rootScope.toDateforApi = $rootScope.toDateforApi.replace(/\D+/g, '');
 		$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
 	});
-
-	//set max date attribute input to current date
 	
 	//console.log($scope.maxDate);
 
 	//set minimum date on 'to date' input so 'to date' has to be later than 'from date'
 	
-	console.log($scope.moreThanFrom);
+
 }])
 
 .controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$http', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
@@ -61,15 +57,6 @@ angular.module('timesSearchApp')
 		$rootScope.results = [];
 		$location.path('/home');
 	};
-
-   /*$scope.eventClass = function(){
-   		if (Math.random() > 0.5) {
-   			return 'flex-box ' + 'flexbox-big';
-   		}
-   		else {
-   			return 'flex-box';
-   		}
-   };*/
    
    	$scope.eventClass = function(){
    		if (Math.random() > 0.5) {
@@ -88,20 +75,25 @@ angular.module('timesSearchApp')
 
 	$window.scroll(function(){
 		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
+		$scope.hideWeather = true;
 	});
 
 	//infinite Scrolling
+
+
+
     $scope.loadMoreResults = function() {
     	console.log("Loading more results!");
+    
     	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
 			function(results){
 				$rootScope.results = $rootScope.results.concat(results.docs);
-				console.log($rootScope.results);
 			});
-    	return($rootScope.results);
+    	//return($rootScope.results);
+
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_ffec8a2d.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_83335c85.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
