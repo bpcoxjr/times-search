@@ -27,6 +27,7 @@ angular.module('timesSearchApp')
 		if(!convertedFromDate)return;
 		$rootScope.fromDateforApi = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
 		$rootScope.fromDateforApi = $rootScope.fromDateforApi.replace(/\D+/g, '');
+		//make sure 'to' date is later than 'from date'
 		$scope.moreThanFrom = $filter('date')((convertedFromDate), 'yyyy-MM-dd');
 	});
 
@@ -34,6 +35,7 @@ angular.module('timesSearchApp')
 		if(!convertedToDate)return;
 		$rootScope.toDateforApi = $filter('date')(new Date(convertedToDate), 'yyyy-MM-dd');
 		$rootScope.toDateforApi = $rootScope.toDateforApi.replace(/\D+/g, '');
+		//make sure user can't input a date past current date
 		$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
 	});
 	
@@ -80,14 +82,13 @@ angular.module('timesSearchApp')
 
 
 
-    $scope.loadMoreResults = function() {
+    /*$scope.loadMoreResults = function() {
     	console.log("Loading more results!");
     
     	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
 			function(results){
 				$rootScope.results = $rootScope.results.concat(results.docs);
 			});
-    	//return($rootScope.results);
-
-    };
+    	return($rootScope.results);
+    };*/
 }]);
