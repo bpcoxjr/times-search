@@ -23,14 +23,14 @@ body {
 	background-attachment: fixed;
 }
 
-.masthead-down {
+.masthead {
 	background: $white;
 	box-shadow: $headerShadow;
 	top: 0;
 	min-width: 100%;
 	min-height: 6em;
 	position: fixed;
-	z-index: 3;
+	z-index: 2;
 	transition-timing-function: top 0s ease-out;
 	transition-timing-function: top 3s ease-in;
 	-webkit-transition-timing-function: top 0s ease-out;
@@ -40,11 +40,6 @@ body {
 		        animation-duration: $animationTime;
 		display: inline-block;
 	}
-}
-
-//hide nav header when user scrolls down
-.masthead-up {
-	height: -6em;
 }
 
 .big-title {
@@ -292,6 +287,7 @@ body {
 	border: 3px solid #4d4d4d;
 	position: relative;
 	border-radius: 5px;
+	z-index: 3;
 	-webkit-animation-duration: $animationTime;
 	        animation-duration: $animationTime;
 }
@@ -301,7 +297,7 @@ body {
 	top: 0;
 	left: 0;
 	margin: 0 auto;
-	z-index: 2;
+	z-index: 3;
 	background: $stickyBackground;
 	opacity: 1;
 }

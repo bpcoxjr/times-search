@@ -1,14 +1,14 @@
 <div class="search-container">
 	<form id="search-form" ng-submit="submitForm()">	
 		<div class="search-input">
-			<input ng-model="query" class="input-box" type="text" placeholder="Enter search term(s)..." max-length="25" autofocus>
+			<input ng-model="query" class="input-box" type="text" placeholder="Enter search term(s)..." max-length="40" autofocus required>
 		</div>
 		<div class="date-input">
 			<div class="from-input">
-				<label class="date-label">From:</label><input ng-model="fromDate" class="date-box" type="date">
+				<label class="date-label">From:</label><input ng-model="fromDate" class="date-box" type="date" min="1851-09-18" max="{{ maxDate }}" required>
 			</div>
 			<div class="to-input">
-				<label class="date-label">To:</label><input ng-model="toDate" class="date-box" type="date">
+				<label class="date-label">To:</label><input ng-model="toDate" class="date-box" type="date" min="{{ moreThanFrom }}" max="{{ maxDate }}" required>
 			</div>
 		</div>
 		<div class="sort-div">
@@ -17,7 +17,7 @@
 			</div>
 			<div class="sort-input-newest">
 				<label>Newest</label>
-				<input class="check" type="radio" name="sortRadio" ng-model="sortChoice" value="newest">
+				<input class="check" type="radio" name="sortRadio" ng-model="sortChoice" value="newest" required>
 			</div>
 			<div class="sort-input-oldest">
 				<label>Oldest</label>

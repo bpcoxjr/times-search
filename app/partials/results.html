@@ -13,9 +13,9 @@
 		</div>
 	</div>
 </div>
-<div class="infinite-container" infinite-scroll="loadMoreResults()" infinite-scroll-disabled="loadMoreResults.busy">
-  <div class="animated fadeIn flex-boxes">
-    <a href="{{ result.web_url }}" target="_blank" ng-class="eventClass()" ng-repeat="result in results">
+<div class="infinite-container" infinite-scroll="loadMoreResults()">
+  <div class="animated fadeIn flex-boxes" ng-controller="classController">
+    <a href="{{ result.web_url }}" target="_blank" class="{{ eventClass() }}" ng-repeat="result in results">
       <h1 class="headline">{{ result.headline.main }}</h1>
       <h2>{{ result.byline.original }}</h2>
       <h3>Continue reading at nytimes.com...</h3>
