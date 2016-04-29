@@ -55,12 +55,19 @@ angular.module('timesSearchApp')
 		$location.path('/home');
 	};
 
-    var classes = ['', 'flex-box-big'];
-
-    $('.random-flexbox').each(function(){
+    /*$('.random-flexbox').each(function(){
         $(this).addClass(classes[Math.floor(Math.random() * (classes.length))]);
         console.log("I'm adding a class!");
-    });
+    });*/
+
+   $scope.eventClass = function(){
+   		if (Math.random() > 0.5) {
+   			return 'flex-box ' + 'flexbox-big';
+   		}
+   		else {
+   			return 'flex-box';
+   		}
+   };
 
 	//make results header stick to top of page when scrolled to
 	var $window = $(window),
@@ -115,7 +122,7 @@ angular.module('timesSearchApp')
       	$scope.results=results;
     });*/
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_e8a020ac.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c6c773fa.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

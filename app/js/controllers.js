@@ -53,12 +53,19 @@ angular.module('timesSearchApp')
 		$location.path('/home');
 	};
 
-    var classes = ['', 'flexbox-big'];
-
-    $('.random-flexbox').each(function(){
-        $(this).addClass(classes[Math.floor(Math.random() * (classes.length-1))]);
+    /*$('.random-flexbox').each(function(){
+        $(this).addClass(classes[Math.floor(Math.random() * (classes.length))]);
         console.log("I'm adding a class!");
-    });
+    });*/
+
+   $scope.eventClass = function(){
+   		if (Math.random() > 0.5) {
+   			return 'flex-box ' + 'flexbox-big';
+   		}
+   		else {
+   			return 'flex-box';
+   		}
+   };
 
 	//make results header stick to top of page when scrolled to
 	var $window = $(window),
