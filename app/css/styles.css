@@ -82,7 +82,7 @@ body {
   min-width: 100%;
   min-height: 6em;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   transition-timing-function: top 0s ease-out;
   transition-timing-function: top 3s ease-in;
   -webkit-transition-timing-function: top 0s ease-out;
@@ -297,7 +297,7 @@ body {
   border: 3px solid #4d4d4d;
   position: relative;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 2;
   animation-duration: 2s; }
 
 #stickyResults.sticky {
