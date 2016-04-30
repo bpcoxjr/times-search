@@ -427,7 +427,7 @@ hr {
     background-image: url("../img/exclusive_paper.png");
     opacity: 0.9;
     border-radius: 5px;
-    display: flex;
+    display: block;
     flex: 2 2 15em;
     margin: 0.3em;
     padding: 1em 2em .5em 2em;
