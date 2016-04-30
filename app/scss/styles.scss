@@ -297,15 +297,24 @@ body {
 	z-index: 3;
 	background: $stickyBackground;
 	opacity: 1;
-	height: 8em;
+	height: 9em;
 	.weather-report {
 		border: none;
+		display: none;
 	}
 	.results-title h1 {
 		font-size: 5em;
+		
+	}
+	.results-title h4 {
+		font-size: 1.25em;
+		margin: .5em 0 .5em 0;
 	}
 	.return-home button {
 		margin-top: 3em;
+	}
+	hr {
+		display: none;
 	}
 }
 

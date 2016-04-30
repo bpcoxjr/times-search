@@ -82,7 +82,7 @@ body {
   min-width: 100%;
   min-height: 6em;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   transition-timing-function: top 0s ease-out;
   transition-timing-function: top 3s ease-in;
   -webkit-transition-timing-function: top 0s ease-out;
@@ -93,7 +93,7 @@ body {
 
 .big-title {
   font-family: "sketch-gothic-school";
-  color: #262626;
+  color: #595959;
   font-size: 4em;
   margin-left: .25em;
   padding-top: .20em; }
@@ -297,7 +297,7 @@ body {
   border: 3px solid #4d4d4d;
   position: relative;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 2;
   animation-duration: 2s; }
 
 #stickyResults.sticky {
@@ -308,13 +308,19 @@ body {
   z-index: 3;
   background: url("../img/exclusive_paper.png");
   opacity: 1;
-  height: 8em; }
+  height: 9em; }
   #stickyResults.sticky .weather-report {
-    border: none; }
+    border: none;
+    display: none; }
   #stickyResults.sticky .results-title h1 {
     font-size: 5em; }
+  #stickyResults.sticky .results-title h4 {
+    font-size: 1.25em;
+    margin: .5em 0 .5em 0; }
   #stickyResults.sticky .return-home button {
     margin-top: 3em; }
+  #stickyResults.sticky hr {
+    display: none; }
 
 .weather-report {
   height: 200px;

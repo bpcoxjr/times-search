@@ -17,6 +17,7 @@ angular.module('ArticleServices', [])
 			var begin_date = '&begin_date=' + fromDateforApi;
 			var end_date = '&end_date=' + toDateforApi;
 			var sort = '&sort=' + sortChoice;
+			console.log('Searching NYT for ' + query + ' from ' + fromDateforApi + ' to ' + toDateforApi + ' sorted by ' + sortChoice + ' first.');
 			return $http.get(baseUrl + responseFormat + q + begin_date + end_date + sort + key).then(function(results){
 				console.log(results);
 				//add random class to flex-boxes
@@ -27,7 +28,5 @@ angular.module('ArticleServices', [])
 			});
 		}
 		return {getArticles: getArticles};	
-
-		$rootscope.results = results;
 }]);
 

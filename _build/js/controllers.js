@@ -40,12 +40,6 @@ angular.module('timesSearchApp')
 		//make sure user can't input a date past current date
 		$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
 	});
-	
-	//console.log($scope.maxDate);
-
-	//set minimum date on 'to date' input so 'to date' has to be later than 'from date'
-	
-
 }])
 
 .controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$http', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
@@ -77,28 +71,20 @@ angular.module('timesSearchApp')
 
 	$window.scroll(function(){
 		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
-		$scope.hideWeather = true;
-		$scope.hideHr = true;
-		$scope.hideDate = true;
-		if (elementTop > $window.scrollTop()) {
-			$scope.hideWeather = false;
-			$scope.hideHr = false;
-			$scope.hideDate = false;
-		}
 	});
+
+
 
 	//infinite Scrolling
     $scope.loadMoreResults = function() {
-    	console.log("Loading more results!");
-    
-    	/*articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
-			function(results){
-				$rootScope.results = $rootScope.results.concat(results.docs);
-			});
-    	return($rootScope.results);*/
+    	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
+		function(results){
+			$rootScope.results = $rootScope.results.concat(results.docs);
+		});
+    	return($rootScope.results);
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_88d6f910.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_87f8137b.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
