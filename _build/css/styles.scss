@@ -461,6 +461,11 @@ hr {
     border: $flex-box-border;
     text-decoration: none;
     z-index: 1;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    
 
 	    &:focus,
 	    &:hover {
@@ -473,9 +478,8 @@ hr {
 			h2 {
 				visibility: hidden;
 			}
-			span.continue-reading {
+			.continue-reading {
 				opacity: 1;
-				visibility: visible;
 			}
 			p {
 				visibility: hidden;
@@ -489,25 +493,13 @@ hr {
 		color: #404040;
 	}
 
-	span.continue-reading {
+	.continue-reading {
 		color: $white;
 		opacity: 0;
 		font-family: $googleFont;
 		font-size: 2em;
 		-webkit-font-smoothing: $a;
-		visibility: hidden;
-		display: table;
-		//position: absolute;
-		min-height: 100%;
-		min-width: 100%;
-		left: 0;
-		top: 0;
-	}
-
-	span.continue-reading span {
-		display: table-cell;
-		text-align: center;
-		vertical-align: middle;
+		position: relative;
 	}
 
     .flex-title {

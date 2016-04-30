@@ -19,7 +19,7 @@
     <a href="{{ result.web_url }}" target="_blank" class="{{ result.class }}"  ng-repeat="result in results">
       <h1 class="headline">{{ result.headline.main }}</h1>
       <h2>{{ result.byline.original }}</h2>
-      <span class="continue-reading"><span>Continue reading at nytimes.com...</span></span>
+      <h3 class="continue-reading">Continue reading at nytimes.com...</h3>
       <p class="snippet">{{ result.snippet }}</p>
       <h2 class="published-header">Published on:</h2>
       <p class="published-date">{{ result.pub_date | date: 'MMMM dd, yyyy'}}</p>
