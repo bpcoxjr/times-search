@@ -300,6 +300,16 @@ body {
 	z-index: 3;
 	background: $stickyBackground;
 	opacity: 1;
+	height: 8em;
+	.weather-report {
+		border: none;
+	}
+	.results-title h1 {
+		font-size: 5em;
+	}
+	.return-home button {
+		margin-top: 3em;
+	}
 }
 
 .weather-report {

@@ -307,7 +307,14 @@ body {
   margin: 0 auto;
   z-index: 3;
   background: url("../img/exclusive_paper.png");
-  opacity: 1; }
+  opacity: 1;
+  height: 8em; }
+  #stickyResults.sticky .weather-report {
+    border: none; }
+  #stickyResults.sticky .results-title h1 {
+    font-size: 5em; }
+  #stickyResults.sticky .return-home button {
+    margin-top: 3em; }
 
 .weather-report {
   height: 200px;
