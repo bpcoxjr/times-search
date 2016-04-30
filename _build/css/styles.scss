@@ -464,13 +464,21 @@ hr {
 
 	    &:focus,
 	    &:hover {
-			background: rgba(60, 60, 60, 0.9);
+			background: $darker;
 			opacity: 1;
-			border: 2px solid #ffffff;
-			h3 {
+			border: 2px solid $darker;
+			h1 {
+				visibility: hidden;
+			}
+			h2 {
+				visibility: hidden;
+			}
+			span.continue-reading {
 				opacity: 1;
 				visibility: visible;
-				font-size: 1em;
+			}
+			p {
+				visibility: hidden;
 			}
 		}
 	}
@@ -481,13 +489,25 @@ hr {
 		color: #404040;
 	}
 
-	h3 {
-		color: #ffffff;
+	span.continue-reading {
+		color: $white;
 		opacity: 0;
 		font-family: $googleFont;
-		font-size: 0em;
+		font-size: 2em;
 		-webkit-font-smoothing: $a;
 		visibility: hidden;
+		display: table;
+		//position: absolute;
+		min-height: 100%;
+		min-width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	span.continue-reading span {
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
 	}
 
     .flex-title {

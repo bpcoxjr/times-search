@@ -435,24 +435,38 @@ hr {
     text-decoration: none;
     z-index: 1; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
-      background: rgba(60, 60, 60, 0.9);
+      background: #262626;
       opacity: 1;
-      border: 2px solid #ffffff; }
-      .flex-boxes .flex-box:focus h3, .flex-boxes .flex-box:hover h3 {
+      border: 2px solid #262626; }
+      .flex-boxes .flex-box:focus h1, .flex-boxes .flex-box:hover h1 {
+        visibility: hidden; }
+      .flex-boxes .flex-box:focus h2, .flex-boxes .flex-box:hover h2 {
+        visibility: hidden; }
+      .flex-boxes .flex-box:focus span.continue-reading, .flex-boxes .flex-box:hover span.continue-reading {
         opacity: 1;
-        visibility: visible;
-        font-size: 1em; }
+        visibility: visible; }
+      .flex-boxes .flex-box:focus p, .flex-boxes .flex-box:hover p {
+        visibility: hidden; }
   .flex-boxes h2 {
     font-family: "Fanwood Text", serif;
     font-size: 1em;
     color: #404040; }
-  .flex-boxes h3 {
-    color: #ffffff;
+  .flex-boxes span.continue-reading {
+    color: #fff;
     opacity: 0;
     font-family: "Belgrano", serif;
-    font-size: 0em;
+    font-size: 2em;
     -webkit-font-smoothing: antialiased;
-    visibility: hidden; }
+    visibility: hidden;
+    display: table;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0; }
+  .flex-boxes span.continue-reading span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
   .flex-boxes .flex-title {
     color: #262626;
     margin-bottom: 0.5em;
