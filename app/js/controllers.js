@@ -83,11 +83,10 @@ angular.module('timesSearchApp')
     $scope.loadMoreResults = function() {
     	console.log("Loading more results!");
     
-    	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
+    	/*articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
 			function(results){
 				$rootScope.results = $rootScope.results.concat(results.docs);
 			});
-    	//return($rootScope.results);
-
+    	return($rootScope.results);*/
     };
 }]);
