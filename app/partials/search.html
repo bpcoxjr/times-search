@@ -5,10 +5,10 @@
 		</div>
 		<div class="date-input">
 			<div class="from-input">
-				<label class="date-label">From:</label><input ng-model="fromDate" id="datepicker" class="date-box" type="date" min="1851-09-18" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
+				<label class="date-label">From:</label><input type="date" ng-model="fromDate" id="datepicker" class="date-box" min="1851-09-18" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
 			</div>
 			<div class="to-input">
-				<label class="date-label">To:</label><input ng-model="toDate" id="datepicker" class="date-box" type="date" min="{{ moreThanFrom }}" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
+				<label class="date-label">To:</label><input type="date" ng-model="toDate" id="datepicker" class="date-box" min="{{ moreThanFrom }}" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
 			</div>
 		</div>
 		<div class="sort-div">

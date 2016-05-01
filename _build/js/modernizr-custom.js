@@ -1,90 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-angular.module('timesSearchApp')
-
-.controller('SearchController', ['articleFactory', '$scope', '$rootScope', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
-
-	$rootScope.results = [];
-	
-
-	//this function called when 'Search' button clicked
-	$scope.submitForm = function(){
-		$rootScope.query = $scope.query;
-	    $rootScope.fromDate = $scope.fromDate;
-		$rootScope.toDate = $scope.toDate;
-		$rootScope.sortChoice = $scope.sortChoice;
-		$rootScope.toDateforApi = $scope.toDateforApi;
-		$rootScope.fromDateforApi= $scope.fromDateforApi;
-		//console.log('Searching NYT for ' + query + ' between ' + fromDateforApi + ' and ' + toDateforApi);
-		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate, $scope.fromDateforApi, $scope.toDateforApi, $scope.sortChoice).then(
-			function(results){
-				$rootScope.results = $rootScope.results.concat(results.docs);
-				console.log($rootScope.results);
-			});
-		$location.path('/results');
-	};
-
-	//convert user date input to format required by NYT API
-	$scope.$watch('fromDate', function(convertedFromDate){
-		if(!convertedFromDate)return;
-		$rootScope.fromDateforApi = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
-		$rootScope.fromDateforApi = $rootScope.fromDateforApi.replace(/\D+/g, '');
-		//make sure 'to' date is later than 'from date'
-		$scope.moreThanFrom = $filter('date')((convertedFromDate), 'yyyy-MM-dd');
-	});
-
-	$scope.$watch('toDate', function(convertedToDate){
-		if(!convertedToDate)return;
-		$rootScope.toDateforApi = $filter('date')(new Date(convertedToDate), 'yyyy-MM-dd');
-		$rootScope.toDateforApi = $rootScope.toDateforApi.replace(/\D+/g, '');
-		//make sure user can't input a date past current date
-		$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
-	});
-}])
-
-.controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$http', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
-	
-	//date variable to show current date @ top of results page
-	$rootScope.today = new Date();
-
-	//function executes when user clicks 'Go Back' button
-	$scope.startOver = function(){
-		document.getElementById("search-form").reset();
-		$rootScope.results = [];
-		$location.path('/home');
-	};
-   
-   	$scope.eventClass = function(){
-   		if (Math.random() > 0.5) {
-   			return 'flex-box ' + 'flexbox-big';
-   		}
-   		else {
-   			return 'flex-box';
-   		}
-	};
-  
-
-	//make results header stick to top of page when scrolled to
-	var $window = $(window),
-		$stickyElement = $('#stickyResults'),
-		elementTop = $stickyElement.offset().top;
-
-	$window.scroll(function(){
-		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
-	});
-
-
-
-	//infinite Scrolling
-    $scope.loadMoreResults = function() {
-    	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
-		function(results){
-			$rootScope.results = $rootScope.results.concat(results.docs);
-		});
-    	return($rootScope.results);
-    };
-}]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_e57dc0b2.js","/")
+/*! modernizr 3.3.1 (Custom Build) | MIT *
+ * http://modernizr.com/download/?-inputtypes-setclasses !*/
+!function(e,t,n){function a(e,t){return typeof e===t}function s(){var e,t,n,s,i,o,c;for(var u in r)if(r.hasOwnProperty(u)){if(e=[],t=r[u],t.name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(s=a(t.fn,"function")?t.fn():t.fn,i=0;i<e.length;i++)o=e[i],c=o.split("."),1===c.length?Modernizr[c[0]]=s:(!Modernizr[c[0]]||Modernizr[c[0]]instanceof Boolean||(Modernizr[c[0]]=new Boolean(Modernizr[c[0]])),Modernizr[c[0]][c[1]]=s),l.push((s?"":"no-")+c.join("-"))}}function i(e){var t=u.className,n=Modernizr._config.classPrefix||"";if(f&&(t=t.baseVal),Modernizr._config.enableJSClass){var a=new RegExp("(^|\\s)"+n+"no-js(\\s|$)");t=t.replace(a,"$1"+n+"js$2")}Modernizr._config.enableClasses&&(t+=" "+n+e.join(" "+n),f?u.className.baseVal=t:u.className=t)}function o(){return"function"!=typeof t.createElement?t.createElement(arguments[0]):f?t.createElementNS.call(t,"http://www.w3.org/2000/svg",arguments[0]):t.createElement.apply(t,arguments)}var l=[],r=[],c={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){r.push({name:e,fn:t,options:n})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=c,Modernizr=new Modernizr;var u=t.documentElement,f="svg"===u.nodeName.toLowerCase(),p=o("input"),d="search tel url email datetime date month week time datetime-local number range color".split(" "),m={};Modernizr.inputtypes=function(e){for(var a,s,i,o=e.length,l="1)",r=0;o>r;r++)p.setAttribute("type",a=e[r]),i="text"!==p.type&&"style"in p,i&&(p.value=l,p.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(a)&&p.style.WebkitAppearance!==n?(u.appendChild(p),s=t.defaultView,i=s.getComputedStyle&&"textfield"!==s.getComputedStyle(p,null).WebkitAppearance&&0!==p.offsetHeight,u.removeChild(p)):/^(search|tel)$/.test(a)||(i=/^(url|email)$/.test(a)?p.checkValidity&&p.checkValidity()===!1:p.value!=l)),m[e[r]]=!!i;return m}(d),s(),i(l),delete c.addTest,delete c.addAsyncTest;for(var h=0;h<Modernizr._q.length;h++)Modernizr._q[h]();e.Modernizr=Modernizr}(window,document);
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_115a8bef.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
