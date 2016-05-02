@@ -73,7 +73,6 @@ angular.module('timesSearchApp')
    		}
 	};
   
-
 	//make results header stick to top of page when scrolled to
 	var $window = $(window),
 		$stickyElement = $('#stickyResults'),
@@ -83,18 +82,20 @@ angular.module('timesSearchApp')
 		$stickyElement.toggleClass('sticky', $window.scrollTop() > elementTop);
 	});
 
-
-
 	//infinite Scrolling
     $scope.loadMoreResults = function() {
+    	if ($rootScope.query == undefined){
+    		return false;
+    	}
     	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
 		function(results){
 			$rootScope.results = $rootScope.results.concat(results.docs);
 		});
+		console.log("loading more results!")
     	return($rootScope.results);
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_7c5ad382.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_91f29375.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
