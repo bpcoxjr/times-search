@@ -10,9 +10,15 @@
 
 /*index.html styles*/
 
+html, body {
+	height: auto;
+	min-height: 100%;
+}
+
 html {
 	position: relative;
 	min-height: 100%;
+	background-attachment: fixed;
 }
 
 body {
@@ -96,6 +102,7 @@ body {
 
 .search-container {
 	margin-top: 3em;
+	margin-bottom: 3em;
 	border: $containerBorder;
 	border-radius: 5px;
 	position: relative;
@@ -482,13 +489,8 @@ hr {
 			p {
 				visibility: hidden;
 			}
-			.continue-reading {
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-justify-content: center;
-				    -ms-flex-pack: center;
-				        justify-content: center;
+			h3 {
+				opacity: 1;
 			}
 		}
 	}
@@ -510,11 +512,14 @@ hr {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		display: none;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		h3 {
-			-webkit-flex-grow: 0;
-			    -ms-flex-positive: 0;
-			        flex-grow: 0;
+			opacity: 0;
 		}
 	}
 

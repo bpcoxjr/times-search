@@ -82,14 +82,14 @@ angular.module('timesSearchApp')
 
 	//infinite Scrolling
     $scope.loadMoreResults = function() {
-    	if ($rootScope.query == undefined){
+    	if ($rootScope.query === undefined){
     		return false;
     	}
     	articleFactory.getArticles($rootScope.query, $rootScope.fromDate, $rootScope.toDate, $rootScope.fromDateforApi, $rootScope.toDateforApi, $rootScope.sortChoice).then(
 		function(results){
 			$rootScope.results = $rootScope.results.concat(results.docs);
 		});
-		console.log("loading more results!")
+		console.log("loading more results!");
     	return($rootScope.results);
     };
 }]);

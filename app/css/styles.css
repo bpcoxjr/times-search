@@ -64,9 +64,14 @@ html {
   box-sizing: inherit; }
 
 /*index.html styles*/
+html, body {
+  height: auto;
+  min-height: 100%; }
+
 html {
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+  background-attachment: fixed; }
 
 body {
   min-width: 100%;
@@ -136,6 +141,7 @@ body {
 /*search.html styles*/
 .search-container {
   margin-top: 3em;
+  margin-bottom: 3em;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   position: relative;
@@ -168,7 +174,7 @@ body {
   border: none;
   display: block;
   padding-left: .5em;
-  border: 1px solid #333333; }
+  border: 2px solid #333333; }
 
 .date-input {
   margin-left: auto;
@@ -186,7 +192,7 @@ body {
     border: none;
     padding-left: .5em;
     line-height: 2em;
-    border: 1px solid #333333;
+    border: 2px solid #333333;
     display: inline-block;
     width: 8.5em; }
   .date-input .from-input {
@@ -256,7 +262,7 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   background-color: #262626;
-  border: 1px solid 1px solid #333333; }
+  border: 1px solid 2px solid #333333; }
   .submit-button:hover {
     background-color: #262626; }
 
@@ -446,9 +452,8 @@ hr {
         visibility: hidden; }
       .flex-boxes .flex-box:focus p, .flex-boxes .flex-box:hover p {
         visibility: hidden; }
-      .flex-boxes .flex-box:focus .continue-reading, .flex-boxes .flex-box:hover .continue-reading {
-        display: flex;
-        justify-content: center; }
+      .flex-boxes .flex-box:focus h3, .flex-boxes .flex-box:hover h3 {
+        opacity: 1; }
   .flex-boxes h2 {
     font-family: "Fanwood Text", serif;
     font-size: 1em;
@@ -464,9 +469,10 @@ hr {
     right: 0;
     bottom: 0;
     left: 0;
-    display: none; }
+    display: flex;
+    justify-content: center; }
     .flex-boxes .continue-reading h3 {
-      flex-grow: 0; }
+      opacity: 0; }
   .flex-boxes .flex-title {
     color: #262626;
     margin-bottom: 0.5em;

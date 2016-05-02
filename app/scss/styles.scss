@@ -10,9 +10,15 @@
 
 /*index.html styles*/
 
+html, body {
+	height: auto;
+	min-height: 100%;
+}
+
 html {
 	position: relative;
 	min-height: 100%;
+	background-attachment: fixed;
 }
 
 body {
@@ -94,6 +100,7 @@ body {
 
 .search-container {
 	margin-top: 3em;
+	margin-bottom: 3em;
 	border: $containerBorder;
 	border-radius: 5px;
 	position: relative;
@@ -464,9 +471,8 @@ hr {
 			p {
 				visibility: hidden;
 			}
-			.continue-reading {
-				display: flex;
-				justify-content: center;
+			h3 {
+				opacity: 1;
 			}
 		}
 	}
@@ -488,9 +494,10 @@ hr {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		display: none;
+		display: flex;
+		justify-content: center;
 		h3 {
-			flex-grow: 0;
+			opacity: 0;
 		}
 	}
 
