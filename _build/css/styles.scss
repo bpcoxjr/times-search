@@ -465,6 +465,7 @@ hr {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+    position: relative;
 
 	    &:focus,
 	    &:hover {
@@ -477,18 +478,17 @@ hr {
 			h2 {
 				visibility: hidden;
 			}
+
+			p {
+				visibility: hidden;
+			}
 			.continue-reading {
-				display: inline-block;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
 				-webkit-justify-content: center;
 				    -ms-flex-pack: center;
 				        justify-content: center;
-				-webkit-align-items: center;
-				    -ms-flex-align: center;
-				            -ms-grid-row-align: center;
-				        align-items: center;
-			}
-			p {
-				visibility: hidden;
 			}
 		}
 	}
@@ -505,7 +505,17 @@ hr {
 		font-family: $googleFont;
 		font-size: 2em;
 		-webkit-font-smoothing: $a;
-		position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		h3 {
+			-webkit-flex-grow: 0;
+			    -ms-flex-positive: 0;
+			        flex-grow: 0;
+		}
 	}
 
     .flex-title {

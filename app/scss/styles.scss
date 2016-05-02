@@ -447,6 +447,7 @@ hr {
     text-decoration: none;
     z-index: 1;
     justify-content: center;
+    position: relative;
 
 	    &:focus,
 	    &:hover {
@@ -459,13 +460,13 @@ hr {
 			h2 {
 				visibility: hidden;
 			}
-			.continue-reading {
-				display: inline-block;
-				justify-content: center;
-				align-items: center;
-			}
+
 			p {
 				visibility: hidden;
+			}
+			.continue-reading {
+				display: flex;
+				justify-content: center;
 			}
 		}
 	}
@@ -482,7 +483,15 @@ hr {
 		font-family: $googleFont;
 		font-size: 2em;
 		-webkit-font-smoothing: $a;
-		position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		h3 {
+			flex-grow: 0;
+		}
 	}
 
     .flex-title {
