@@ -10,11 +10,15 @@ angular.module('timesSearchApp')
 	//this function called when 'Search' button clicked
 	$scope.submitForm = function(){
 		$rootScope.query = $scope.query;
+
 	    $rootScope.fromDate = $scope.fromDate;
 		$rootScope.toDate = $scope.toDate;
-		$rootScope.sortChoice = $scope.sortChoice;
+
 		$rootScope.toDateforApi = $scope.toDateforApi;
 		$rootScope.fromDateforApi= $scope.fromDateforApi;
+
+		$rootScope.sortChoice = $scope.sortChoice;
+		
 		//console.log('Searching NYT for ' + query + ' between ' + fromDateforApi + ' and ' + toDateforApi);
 		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate, $scope.fromDateforApi, $scope.toDateforApi, $scope.sortChoice).then(
 			function(results){
@@ -29,6 +33,9 @@ angular.module('timesSearchApp')
 		if(!convertedFromDate)return;
 		$rootScope.fromDateforApi = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
 		$rootScope.fromDateforApi = $rootScope.fromDateforApi.replace(/\D+/g, '');
+		//set min date input to earliest records available via NYT API
+		$scope.minDate = new Date("09/15/1851");
+		console.log($scope.mindDate);
 		//make sure 'to' date is later than 'from date'
 		$scope.moreThanFrom = $filter('date')((convertedFromDate), 'yyyy-MM-dd');
 	});
@@ -84,7 +91,7 @@ angular.module('timesSearchApp')
     	return($rootScope.results);
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_e57dc0b2.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_ee04e9bd.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

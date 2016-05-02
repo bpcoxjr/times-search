@@ -3,17 +3,40 @@
 		<div class="search-input">
 			<input ng-model="query" class="input-box" type="text" placeholder="Enter search term(s)..." max-length="40" autofocus required>
 		</div>
-		<div class="date-input">
+		<!--<div class="date-input">
 			<div class="from-input">
-				<label class="date-label">From:</label><input type="date" ng-model="fromDate" id="datepicker" class="date-box" min="1851-09-18" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
+				<label class="date-label">From:</label><input type="date" ng-model="fromDate" class="date-box" min="1851-09-18" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
 			</div>
 			<div class="to-input">
-				<label class="date-label">To:</label><input type="date" ng-model="toDate" id="datepicker" class="date-box" min="{{ moreThanFrom }}" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
+				<label class="date-label">To:</label><input type="date" ng-model="toDate" class="date-box" min="{{ moreThanFrom }}" max="{{ maxDate }}" required placeholder="MM/DD/YYYY">
 			</div>
-		</div>
+		</div>-->
+
+		<!-- 'from date' datepicker -->
+		<form name="dateForm">
+			<div class="date-input">
+				<div class="from-input">
+					<label class="date-label">From:</label><md-datepicker name="dateField" class="date-box" ng-model="fromDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+				</div>
+
+				<!-- 'to date' datepicker -->
+				<div class="to-input">
+					<label class="date-label">To:</label><md-datepicker name="dateField" class="date-box" ng-model="toDate" md-placeholder="Enter date" md-min-date="moreThanFrom" md-max-date="maxDate"></md-datepicker>
+				</div>
+
+				<div class="validation-messages" ng-messages="dateForm.dateField.$error">
+			        <div ng-message="valid">The entered value is not a date!</div>
+			        <div ng-message="required">This date is required!</div>
+			        <div ng-message="mindate">Date is too early!</div>
+			        <div ng-message="maxdate">Date is too late!</div>
+			        <div ng-message="filtered">Only weekends are allowed!</div>
+			    </div>
+	    	</div>
+    	</form>
+
 		<div class="sort-div">
 			<div class="sort-label">
-				<h3>Sort by:</h3>
+				<h3>Sort results by:</h3>
 			</div>
 			<div class="sort-input-newest">
 				<label>Newest</label>

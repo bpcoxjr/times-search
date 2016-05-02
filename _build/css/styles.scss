@@ -35,11 +35,11 @@ body {
 	transition-timing-function: top 3s ease-in;
 	-webkit-transition-timing-function: top 0s ease-out;
 	-webkit-transition-timing-function: top 3s ease-in;
-	li {
-		-webkit-animation-duration: $animationTime;
-		        animation-duration: $animationTime;
-		display: inline-block;
-	}
+		li {
+			-webkit-animation-duration: $animationTime;
+			        animation-duration: $animationTime;
+			display: inline-block;
+		}
 }
 
 .big-title {
@@ -59,9 +59,9 @@ body {
 	color: $darker;
 	-webkit-font-smoothing: $a;
 	text-decoration: none;
-	&:hover {
-		color: $lighter;
-	}
+		&:hover {
+			color: $lighter;
+		}
 }
 
 .view {
@@ -82,14 +82,14 @@ body {
 	background-color: $white;
 	box-shadow: $footerShadow;
 	z-index: 9 !important;
-	p {
-		-webkit-animation-duration: $animationTime;
-		        animation-duration: $animationTime;
-		margin-bottom: .5em;
-	}
-	a {
-		color: $medium;
-	}
+		p {
+			-webkit-animation-duration: $animationTime;
+			        animation-duration: $animationTime;
+			margin-bottom: .5em;
+		}
+		a {
+			color: $medium;
+		}
 }
 
 /*search.html styles*/
@@ -139,9 +139,13 @@ body {
 .date-input {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.date-box {
+	.date-label {
+	color: #000;
+	font-family: $googleFont;
+	font-size: 1.5em;
+	-webkit-font-smoothing: $a;
+	}
+	.date-box {
 	font-family: $googleFont;
 	font-size: 1.5em;
 	-webkit-font-smoothing: $a;
@@ -150,76 +154,74 @@ body {
 	padding-left: .5em;
 	line-height: 2em;
 	border: $inputBorder;
-}
-
-.date-label {
-	color: #000;
-	font-family: $googleFont;
-	font-size: 1.5em;
-	-webkit-font-smoothing: $a;
-}
-
-.from-input {
 	display: inline-block;
-	margin-left: 10.5em;
-	margin-top: 2em;
-	label {
-		padding-right: .75em;
+	width: 8.5em;
 	}
-}
-
-.to-input {
+	.from-input {
+	display: inline-block;
+	margin-left: 13em;
+	margin-top: 2em;
+		label {
+			padding-right: .75em;
+		}
+		}
+	.to-input {
 	display: inline-block;
 	margin-left: 6.7em;
-	label {
-		padding-right: .75em;
+		label {
+			padding-right: .75em;
+		}
+	}
+	.md-datepicker-input{
+		font-size: 15px;
 	}
 }
 
 .sort-div {
 	text-align: center;
-}
-
-.sort-label {
+	.sort-label {
 	display: inline-block;
 	margin-bottom: .5em;
 	//margin-left: 15em;
 	font-family: $googleFont;
 	font-size: 2em;
 	-webkit-font-smoothing: $a;
-}
-
-.sort-input-newest {
+	}
+	.sort-input-newest {
 	display: inline-block;
 	margin-left: 1em;
 	margin-top: 2em;
 	font-family: $googleFont;
 	font-size: 1.5em;
 	-webkit-font-smoothing: $a;
-	label {
-		margin-top: .25em;
-		margin-left: .5em;
-		margin-right: .25em;
-		-webkit-font-smoothing: $a;
+		label {
+			margin-top: .25em;
+			margin-left: .5em;
+			margin-right: .25em;
+			-webkit-font-smoothing: $a;
+		}
+		h3 {
+			margin-bottom: .25em;
+			color: #000;
+		}
 	}
-	h3 {
-		margin-bottom: .25em;
-		color: #000;
-	}
-}
-
-.sort-input-oldest {
+	.sort-input-oldest {
 	display: inline-block;
 	margin-left: 1em;
 	margin-top: 2em;
 	font-family: $googleFont;
 	font-size: 1.5em;
 	-webkit-font-smoothing: $a;
-	label {
-		margin-top: .25em;
-		margin-left: .5em;
-		margin-right: .25em;
-		-webkit-font-smoothing: $a;
+		label {
+			margin-top: .25em;
+			margin-left: .5em;
+			margin-right: .25em;
+			-webkit-font-smoothing: $a;
+		}
+		h3 {
+			margin-bottom: .25em;
+			color: #000;
+		}
 	}
 }
 
@@ -227,9 +229,8 @@ body {
 	margin-top: 3em;
 	margin-bottom: 4em;
 	text-align: center;
-}
-
-.submit-button {
+	}
+	.submit-button {
 	height: 3em;
 	width: 8em;
 	border-radius: 5px;
@@ -239,11 +240,10 @@ body {
 	-webkit-font-smoothing: $a;
 	background-color: $darker;
 	border: 1px solid $inputBorder;
-}
-
-.submit-button:hover {
-	background-color: $darker;
-}
+		&:hover {
+			background-color: $darker;
+		}
+	}	
 
 /* about styles */
 
@@ -383,6 +383,7 @@ hr {
 		&:hover {
 			background-color: $medium;
 			color: $white;
+			border: 2px solid $white;
 		}
     }
 }
@@ -469,7 +470,7 @@ hr {
 	    &:hover {
 			background: $darker;
 			opacity: 1;
-			border: 2px solid $darker;
+			border: 2px solid $white;
 			h1 {
 				visibility: hidden;
 			}
@@ -477,7 +478,14 @@ hr {
 				visibility: hidden;
 			}
 			.continue-reading {
-				opacity: 1;
+				display: inline-block;
+				-webkit-justify-content: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				-webkit-align-items: center;
+				    -ms-flex-align: center;
+				            -ms-grid-row-align: center;
+				        align-items: center;
 			}
 			p {
 				visibility: hidden;
@@ -493,7 +501,7 @@ hr {
 
 	.continue-reading {
 		color: $white;
-		opacity: 0;
+		display: none;
 		font-family: $googleFont;
 		font-size: 2em;
 		-webkit-font-smoothing: $a;

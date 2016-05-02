@@ -8,11 +8,15 @@ angular.module('timesSearchApp')
 	//this function called when 'Search' button clicked
 	$scope.submitForm = function(){
 		$rootScope.query = $scope.query;
+
 	    $rootScope.fromDate = $scope.fromDate;
 		$rootScope.toDate = $scope.toDate;
-		$rootScope.sortChoice = $scope.sortChoice;
+
 		$rootScope.toDateforApi = $scope.toDateforApi;
 		$rootScope.fromDateforApi= $scope.fromDateforApi;
+
+		$rootScope.sortChoice = $scope.sortChoice;
+		
 		//console.log('Searching NYT for ' + query + ' between ' + fromDateforApi + ' and ' + toDateforApi);
 		articleFactory.getArticles($scope.query, $scope.fromDate, $scope.toDate, $scope.fromDateforApi, $scope.toDateforApi, $scope.sortChoice).then(
 			function(results){
@@ -27,6 +31,9 @@ angular.module('timesSearchApp')
 		if(!convertedFromDate)return;
 		$rootScope.fromDateforApi = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
 		$rootScope.fromDateforApi = $rootScope.fromDateforApi.replace(/\D+/g, '');
+		//set min date input to earliest records available via NYT API
+		$scope.minDate = new Date("09/15/1851");
+		console.log($scope.mindDate);
 		//make sure 'to' date is later than 'from date'
 		$scope.moreThanFrom = $filter('date')((convertedFromDate), 'yyyy-MM-dd');
 	});

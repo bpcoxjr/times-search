@@ -25,7 +25,10 @@
     "normalize-css": "^4.1.1",
     "angular-route": "^1.5.3",
     "ng-infinite-scroll": "^0.0.1",
-    "angular-hint": "angular-hint-bower#^0.3.0"
+    "angular-hint": "angular-hint-bower#^0.3.0",
+    "angular-aria": "^1.5.5",
+    "angular-messages": "^1.5.5",
+    "angular-material": "^1.0.8"
   },
   "resolutions": {
     "angular": "^1.5.4"
