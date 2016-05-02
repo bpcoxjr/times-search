@@ -12,8 +12,8 @@ angular.module('timesSearchApp')
 	    $rootScope.fromDate = $scope.fromDate;
 		$rootScope.toDate = $scope.toDate;
 
-		$rootScope.toDateforApi = $scope.toDateforApi;
 		$rootScope.fromDateforApi= $scope.fromDateforApi;
+		$rootScope.toDateforApi = $scope.toDateforApi;
 
 		$rootScope.sortChoice = $scope.sortChoice;
 		
@@ -31,24 +31,27 @@ angular.module('timesSearchApp')
 		if(!convertedFromDate)return;
 		$rootScope.fromDateforApi = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
 		$rootScope.fromDateforApi = $rootScope.fromDateforApi.replace(/\D+/g, '');
-		//set min date input to earliest records available via NYT API
-		$scope.minDate = new Date("09/15/1851");
-		console.log($scope.mindDate);
+
 		//make sure 'to' date is later than 'from date'
-		$scope.moreThanFrom = $filter('date')((convertedFromDate), 'yyyy-MM-dd');
+		//$scope.moreThanFrom = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
+		$scope.moreThanFrom	= new Date($scope.fromDate);
 	});
 
 	$scope.$watch('toDate', function(convertedToDate){
 		if(!convertedToDate)return;
 		$rootScope.toDateforApi = $filter('date')(new Date(convertedToDate), 'yyyy-MM-dd');
 		$rootScope.toDateforApi = $rootScope.toDateforApi.replace(/\D+/g, '');
-		//make sure user can't input a date past current date
-		$scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
 	});
+
+	//set min date input to earliest records available via NYT API
+	$scope.minDate = new Date("09/15/1851");
+
+	//make sure user can't input a date past current date
+	$scope.maxDate = new Date();
 }])
 
 .controller('ResultsController', ['articleFactory', '$scope', '$rootScope', '$http', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
-	
+
 	//date variable to show current date @ top of results page
 	$rootScope.today = new Date();
 
