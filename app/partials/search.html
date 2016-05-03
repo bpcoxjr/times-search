@@ -1,33 +1,32 @@
 <div class="search-container">
-	<form name="searchForm" id="search-form" ng-submit="submitForm()">	
+	<form name="searchForm" id="search-form" ng-submit="searchForm.$valid && submitForm()">	
 		<div class="search-input">
 			<input ng-model="query" class="input-box" type="text" placeholder="Enter search term(s)..." max-length="40" autofocus required>
 		</div>
 
-		<!-- 'from date' datepicker -->
-			<div class="date-input">
-				<div class="from-input">
-					<label class="date-label">From:</label><md-datepicker name="dateFromField" class="date-box" ng-model="fromDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
-				<!-- 'to date' datepicker -->
-				<div class="to-input">
-					<label class="date-label">To:</label><md-datepicker name="dateToField" class="date-box" ng-model="toDate" md-placeholder="Enter Date" md-min-date="moreThanFrom" md-max-date="maxDate"></md-datepicker>
-				</div>
-	
-				 <!--<pre>searchForm.dateField.$error = {{ searchForm.dateField.$error | json }}</pre>-->
-
-				<div class="validation-messages" ng-messages="searchForm.dateFromField.$error">
-			        <div ng-message="valid">The entered value is not a date!</div>
-			        <div ng-message="required">This date is required!</div>
-			        <div ng-message="mindate">Date is too early!</div>
-			        <div ng-message="maxdate">Date is too late!</div>
-			    </div>
-			    <div class="validation-messages" ng-messages="searchForm.dateToField.$error">
-			    	<div ng-message="valid">The entered value is not a date!</div>
-			        <div ng-message="required">This date is required!</div>
-			        <div ng-message="mindate">Date is too early!</div>
-			        <div ng-message="maxdate">Date is too late!</div>
-			    </div>
-	    	</div>
+		<div class="date-input">
+			<!-- 'from date' datepicker -->
+			<div class="from-input">
+				<label class="date-label">From:</label><md-datepicker name="dateFromField" class="date-box" ng-model="fromDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate" required></md-datepicker>
+			<!-- 'to date' datepicker -->
+			<div class="to-input">
+				<label class="date-label">To:</label><md-datepicker name="dateToField" class="date-box" ng-model="toDate" md-placeholder="Enter Date" md-min-date="moreThanFrom" md-max-date="maxDate" required></md-datepicker>
+		</div>
+    	</div>
+    	<div class=error-container>
+	    	<div class="error-messages dateFromErrors validation-messages" ng-messages="searchForm.dateFromField.$error">
+		        <div ng-message="valid">That's not a date!</div>
+		        <div ng-message="required" ng-if="searchForm.$submitted">Field required!</div>
+		        <div ng-message="mindate">Date is too early!</div>
+		        <div ng-message="maxdate">Date is too late!</div>
+		    </div>
+		    <div class="error-messages dateToErrors validation-messages" ng-messages="searchForm.dateToField.$error">
+		    	<div ng-message="valid">That's not a date!</div>
+		        <div ng-message="required" ng-if="searchForm.$submitted">Field required!</div>
+		        <div ng-message="mindate">Date is too early!</div>
+		        <div ng-message="maxdate">Date is too late!</div>
+		    </div>
+		</div>
 		<div class="sort-div">
 			<div class="sort-label">
 				<h3>Sort results by:</h3>

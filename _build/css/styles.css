@@ -717,11 +717,10 @@ html {
 /*index.html styles*/
 html, body {
   height: auto;
-  min-height: 100%; }
+  min-height: 100vh; }
 
 html {
   position: relative;
-  min-height: 100%;
   background-attachment: fixed; }
 
 body {
@@ -792,6 +791,7 @@ body {
 /*search.html styles*/
 .search-container {
   margin-top: 3em;
+  margin-bottom: 3em;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   position: relative;
@@ -859,6 +859,25 @@ body {
   .date-input .md-datepicker-input {
     font-size: 15px; }
 
+.error-container {
+  display: block;
+  margin-top: .75em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2em;
+  width: 50%; }
+  .error-container .error-messages {
+    font-size: 1.5em;
+    font-family: "Belgrano", serif;
+    color: #dd2c00;
+    display: inline-block; }
+  .error-container .dateFromErrors {
+    margin-left: .5em;
+    float: left; }
+  .error-container .dateToErrors {
+    float: right; }
+
 .sort-div {
   text-align: center; }
   .sort-div .sort-label {
@@ -870,7 +889,7 @@ body {
   .sort-div .sort-input-newest {
     display: inline-block;
     margin-left: 1em;
-    margin-top: 2em;
+    margin-top: 1em;
     font-family: "Belgrano", serif;
     font-size: 1.5em;
     -webkit-font-smoothing: antialiased; }
@@ -885,7 +904,7 @@ body {
   .sort-div .sort-input-oldest {
     display: inline-block;
     margin-left: 1em;
-    margin-top: 2em;
+    margin-top: 1em;
     font-family: "Belgrano", serif;
     font-size: 1.5em;
     -webkit-font-smoothing: antialiased; }
@@ -899,11 +918,11 @@ body {
       color: #000; }
 
 .submit-input {
-  margin-top: 3em;
-  margin-bottom: 4em;
+  margin-bottom: 1.5em;
   text-align: center; }
 
 .submit-button {
+  margin-top: .5em;
   height: 3em;
   width: 8em;
   border-radius: 5px;
@@ -919,7 +938,6 @@ body {
 /* about styles */
 .about-container {
   margin-top: 3em;
-  margin-bottom: 3em;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   position: relative;
@@ -1135,6 +1153,7 @@ hr {
     margin: auto;
     font-family: "Belgrano", serif;
     font-size: 1em;
-    -webkit-font-smoothing: antialiased; }
+    -webkit-font-smoothing: antialiased;
+    text-align: center; }
   .flex-boxes .flexbox-big {
     flex: 1 1 40em; }
