@@ -76,6 +76,12 @@ gulp.task('autoprefixer', function(){
 		.pipe(gulp.dest('./_build/css'));
 });
 
+//copy bower components to build folder
+gulp.task('copy-bower', function(){
+  gulp.src('./app/bower_components/**')
+    .pipe(gulp.dest('_build/bower_components'));
+});
+
 // Watch task
 gulp.task('watch', function() {
   gulp.watch('./app/js/*.js', ['jshint']);
@@ -93,4 +99,4 @@ gulp.task('default', ['jshint', 'sass', 'watch']);
 gulp.task('prebuild', gulpsync.sync(['clean']));
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'images', 'autoprefixer', 'styles']);
+gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'images', 'autoprefixer', 'styles', 'copy-bower']);
