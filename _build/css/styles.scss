@@ -531,6 +531,15 @@ hr {
 		color: #404040;
 	}
 
+	.byline-hr {
+		width: 50%;
+		padding: 0;
+      	border: none;
+      	border-top: medium double #333;
+      	color: #333;
+      	text-align: center;
+	}
+
 	.continue-reading {
 		color: $white;
 		display: none;
@@ -568,6 +577,15 @@ hr {
       font-size: 1em;
       -webkit-font-smoothing: $a;
       text-align: center
+    }
+
+    .results-hr {
+      width: 50%;
+   	  padding: 0;
+      border: none;
+      border-top: medium double #333;
+      color: #333;
+      text-align: center;
     }
 
   	.flexbox-big {

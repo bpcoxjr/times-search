@@ -477,6 +477,13 @@ hr {
     font-family: "Fanwood Text", serif;
     font-size: 1em;
     color: #404040; }
+  .flex-boxes .byline-hr {
+    width: 50%;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center; }
   .flex-boxes .continue-reading {
     color: #fff;
     display: none;
@@ -504,6 +511,13 @@ hr {
     font-family: "Belgrano", serif;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
+    text-align: center; }
+  .flex-boxes .results-hr {
+    width: 50%;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
     text-align: center; }
   .flex-boxes .flexbox-big {
     flex: 1 1 40em; }
