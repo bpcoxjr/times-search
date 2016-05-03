@@ -824,7 +824,7 @@ body {
   border: none;
   display: block;
   padding-left: .5em;
-  border: 2px solid #333333; }
+  border: 2px solid #262626; }
 
 .date-input {
   margin-left: auto;
@@ -842,7 +842,7 @@ body {
     border: none;
     padding-left: .5em;
     line-height: 2em;
-    border: 2px solid #333333;
+    border: 2px solid #262626;
     display: inline-block;
     width: 8.5em; }
   .date-input .from-input {
@@ -931,7 +931,7 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   background-color: #262626;
-  border: 1px solid 2px solid #333333; }
+  border: 1px solid 2px solid #262626; }
   .submit-button:hover {
     background-color: #262626; }
 
@@ -1112,7 +1112,7 @@ hr {
     justify-content: center;
     position: relative; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
-      background: rgba(255, 255, 255, 0.8);
+      background: #262626;
       border: 2px solid #fff; }
       .flex-boxes .flex-box:focus h1, .flex-boxes .flex-box:hover h1 {
         visibility: hidden; }
