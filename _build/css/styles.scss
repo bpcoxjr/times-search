@@ -502,7 +502,6 @@ hr {
 	    &:focus,
 	    &:hover {
 			background: $darker;
-			opacity: 1;
 			border: 2px solid $white;
 			h1 {
 				visibility: hidden;
@@ -512,7 +511,7 @@ hr {
 			}
 
 			p {
-				visibility: hidden;
+				color: $darker;
 			}
 			h3 {
 				opacity: 1;

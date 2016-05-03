@@ -1112,17 +1112,18 @@ hr {
     justify-content: center;
     position: relative; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
-      background: #262626;
-      opacity: 1;
+      background: rgba(255, 255, 255, 0.8);
       border: 2px solid #fff; }
       .flex-boxes .flex-box:focus h1, .flex-boxes .flex-box:hover h1 {
         visibility: hidden; }
       .flex-boxes .flex-box:focus h2, .flex-boxes .flex-box:hover h2 {
         visibility: hidden; }
       .flex-boxes .flex-box:focus p, .flex-boxes .flex-box:hover p {
-        visibility: hidden; }
+        color: #262626; }
       .flex-boxes .flex-box:focus h3, .flex-boxes .flex-box:hover h3 {
-        opacity: 1; }
+        opacity: 1;
+        display: flex;
+        align-items: center; }
   .flex-boxes h2 {
     font-family: "Fanwood Text", serif;
     font-size: 1em;

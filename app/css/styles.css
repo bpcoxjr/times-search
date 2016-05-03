@@ -462,14 +462,13 @@ hr {
     position: relative; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
       background: #262626;
-      opacity: 1;
       border: 2px solid #fff; }
       .flex-boxes .flex-box:focus h1, .flex-boxes .flex-box:hover h1 {
         visibility: hidden; }
       .flex-boxes .flex-box:focus h2, .flex-boxes .flex-box:hover h2 {
         visibility: hidden; }
       .flex-boxes .flex-box:focus p, .flex-boxes .flex-box:hover p {
-        visibility: hidden; }
+        color: #262626; }
       .flex-boxes .flex-box:focus h3, .flex-boxes .flex-box:hover h3 {
         opacity: 1;
         display: flex;
