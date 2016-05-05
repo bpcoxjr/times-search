@@ -5,7 +5,7 @@ angular.module('timesSearchApp')
 .controller('SearchController', ['articleFactory', '$scope', '$rootScope', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
 
 	$rootScope.results = [];
-	
+	$rootScope.sortChoice = 'newest';
 
 	//this function called when 'Search' button clicked
 	$scope.submitForm = function(){
@@ -67,7 +67,7 @@ angular.module('timesSearchApp')
    	$scope.eventClass = function(){
    		if (Math.random() > 0.5) {
    			return 'flex-box ' + 'flexbox-big';
-   		}
+   		}  
    		else {
    			return 'flex-box';
    		}
@@ -95,7 +95,7 @@ angular.module('timesSearchApp')
     	return($rootScope.results);
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_5040b03b.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_75b47158.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

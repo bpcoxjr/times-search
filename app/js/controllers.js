@@ -3,7 +3,7 @@ angular.module('timesSearchApp')
 .controller('SearchController', ['articleFactory', '$scope', '$rootScope', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
 
 	$rootScope.results = [];
-	
+	$rootScope.sortChoice = 'newest';
 
 	//this function called when 'Search' button clicked
 	$scope.submitForm = function(){
@@ -65,7 +65,7 @@ angular.module('timesSearchApp')
    	$scope.eventClass = function(){
    		if (Math.random() > 0.5) {
    			return 'flex-box ' + 'flexbox-big';
-   		}
+   		}  
    		else {
    			return 'flex-box';
    		}

@@ -516,8 +516,8 @@ hr {
     width: 50%;
     padding: 0;
     border: none;
-    border-top: medium double #333;
-    color: #333;
+    border-top: medium double #262626;
+    color: #262626;
     text-align: center; }
   .flex-boxes .flexbox-big {
     flex: 1 1 40em; }

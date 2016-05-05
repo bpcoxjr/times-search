@@ -16,7 +16,7 @@ describe('nytApiTest', function(){
 				nytApiTest: [{key:0}, {key:1}]
 			});
 
-			$httpBackend.expect('GET', './partials/search.html').respond(200);
+			//$httpBackend.expect('GET', './partials/search.html').respond(200);
 
 			var articles
 
