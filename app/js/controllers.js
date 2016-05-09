@@ -3,6 +3,8 @@ angular.module('timesSearchApp')
 .controller('SearchController', ['articleFactory', '$scope', '$rootScope', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
 
 	$rootScope.results = [];
+	//$rootScope.fromDate = new Date(new Date().setTime(new Date().getTime() -(1000 * 60 * 60 * 24 * 7)));
+	//$rootScope.toDate = new Date();
 	$rootScope.sortChoice = 'newest';
 
 	//this function called when 'Search' button clicked

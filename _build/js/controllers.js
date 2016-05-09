@@ -5,6 +5,8 @@ angular.module('timesSearchApp')
 .controller('SearchController', ['articleFactory', '$scope', '$rootScope', '$location', '$filter', function(articleFactory, $scope, $rootScope, $location, $filter){
 
 	$rootScope.results = [];
+	//$rootScope.fromDate = new Date(new Date().setTime(new Date().getTime() -(1000 * 60 * 60 * 24 * 7)));
+	//$rootScope.toDate = new Date();
 	$rootScope.sortChoice = 'newest';
 
 	//this function called when 'Search' button clicked
@@ -95,7 +97,7 @@ angular.module('timesSearchApp')
     	return($rootScope.results);
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_82475dae.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_ef946d4e.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

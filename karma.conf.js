@@ -16,18 +16,18 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       './app/bower_components/angular/angular.js',
+      './app/bower_components/angular-mocks/angular-mocks.js',
       './app/bower_components/angular-route/angular-route.js',
       './app/bower_components/angular-material/angular-material.js',
       './app/bower_components/angular-aria/angular-aria.js',
       './app/bower_components/angular-messages/angular-messages.js',
       './app/bower_components/angular-animate/angular-animate.js',
-      './app/bower_components/angular-mocks/angular-mocks.js',
       './app/bower_components/jquery/dist/jquery.js',
       './app/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
       './app/js/main.js',
       './app/js/controllers.js',
       './app/js/factories/*.js',
-      './tests/*.js',
+      './tests/unit-tests/*.js',
     ],
 
 

@@ -7,11 +7,12 @@
 		<div class="date-input">
 			<!-- 'from date' datepicker -->
 			<div class="from-input">
-				<label class="date-label">From:</label><md-datepicker name="dateFromField" class="date-box" ng-model="fromDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate" required></md-datepicker>
+				<!--<label class="date-label">From:</label>--><md-datepicker name="dateFromField" class="date-box" ng-model="fromDate" md-placeholder="Search from" md-min-date="minDate" md-max-date="maxDate" required></md-datepicker>
+			</div>
 			<!-- 'to date' datepicker -->
 			<div class="to-input">
-				<label class="date-label">To:</label><md-datepicker name="dateToField" class="date-box" ng-model="toDate" md-placeholder="Enter Date" md-min-date="moreThanFrom" md-max-date="maxDate" required></md-datepicker>
-		</div>
+				<!--<label class="date-label">To:</label>--><md-datepicker name="dateToField" class="date-box" ng-model="toDate" md-placeholder="Search to" md-min-date="moreThanFrom" md-max-date="maxDate" required></md-datepicker>
+			</div>
     	</div>
     	<div class=error-container>
 	    	<div class="error-messages dateFromErrors validation-messages" ng-messages="searchForm.dateFromField.$error">
@@ -29,7 +30,7 @@
 		</div>
 		<div class="sort-div">
 			<div class="sort-label">
-				<h3>Sort results by:</h3>
+				<h3>Sort by:</h3>
 			</div>
 			<div class="sort-input-newest">
 				<label>Newest</label>
@@ -39,9 +40,9 @@
 				<label>Oldest</label>
 				<input class="check" id="oldestRadio" type="radio" name="sortRadio" ng-model="sortChoice" value="oldest">
 			</div>
+			<div class="submit-input">
+				<button class= "submit-button" type="submit">Search</button>
 		</div>
-		<div class="submit-input">
-			<button class= "submit-button" type="submit">Search</button>
 		</div>
 	</form>
 </div>

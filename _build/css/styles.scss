@@ -36,6 +36,9 @@ body {
 	min-width: 100%;
 	min-height: 6em;
 	position: fixed;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	z-index: 3;
 	transition-timing-function: top 0s ease-out;
 	transition-timing-function: top 3s ease-in;
@@ -52,12 +55,15 @@ body {
 	font-family: $timesFont;
 	color: $darker;
 	font-size: 4em;
-	margin-left: .25em;
+	margin-left: .5em;
 	padding-top: .20em;
+	padding-right: 7em;
 }
 
 .masthead-links {
-	display: inline;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	font-family: $googleFont;
 	font-size: 2em;
 	float: right;
@@ -144,8 +150,15 @@ body {
 }
 
 .date-input {
-	margin-left: auto;
-	margin-right: auto;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
 	.date-label {
 	color: #000;
 	font-family: $googleFont;
@@ -165,18 +178,21 @@ body {
 	width: 8.5em;
 	}
 	.from-input {
-	display: inline-block;
-	margin-left: 13em;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
 	margin-top: 2em;
 		label {
-			padding-right: .75em;
+			padding-right: .25em;
 		}
 	}
 	.to-input {
-	display: inline-block;
-	margin-left: 6.7em;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	margin-top: 2em;
 		label {
-			padding-right: .75em;
+			padding-right: .25em;
 		}
 	}
 	.md-datepicker-input{
@@ -280,12 +296,11 @@ body {
 /* about styles */
 
 .about-container {
-	margin-top: 3em;
+	margin-top: 16em;
 	border: $containerBorder;
 	border-radius: 5px;
 	position: relative;
-	top: 50%;
-	background: $backgroundColor;
+	background: $aboutBackgroundColor;
 }
 
 .about {
@@ -576,7 +591,7 @@ hr {
       font-family: $flex-box-font;
       font-size: 1em;
       -webkit-font-smoothing: $a;
-      text-align: center
+      text-align: initial;
     }
 
     .results-hr {
@@ -592,5 +607,52 @@ hr {
 	    -webkit-flex: 1 1 40em;
 	        -ms-flex: 1 1 40em;
 	            flex: 1 1 40em;
+	}
+}
+
+/* media queries */
+
+@media screen and (max-width: 760px) {
+	.masthead {
+		margin-bottom: 1em;
+	}
+	.masthead ul {
+		margin: 0 auto;
+		padding-bottom: 1em;
+	}
+	.big-title {
+		padding: 0.5em 0 0.5em 0;
+		width: 100%;
+		font-size: 2.5em;
+		text-align: center;
+	}
+	.masthead-links {
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		width: 100%;
+		font-size: 1em;
+		text-align: center;
+		padding: 0.5em 0 0.5em 0;
+	}
+	/*.date-label {
+		display: none;
+	}*/
+	.search-container {
+		margin-top: 13em;
+	}
+	.input-box {
+		width: 50%;
+		height: 100%;
+		font-size: 1.25em;
+	}
+	.sort-div {
+		margin: 0 auto;
+	}
+	.results-header {
+		display: none;
+	}
+	.results-container {
+		margin-top: 14em;
 	}
 }
