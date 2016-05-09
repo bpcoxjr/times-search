@@ -36,7 +36,7 @@ angular.module('timesSearchApp')
 
 		//make sure 'to' date is later than 'from date'
 		//$scope.moreThanFrom = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
-		$scope.moreThanFrom	= new Date($scope.fromDate);
+		$scope.moreThanFrom = new Date($scope.fromDate);
 	});
 
 	$scope.$watch('toDate', function(convertedToDate){
