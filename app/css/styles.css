@@ -528,7 +528,8 @@ hr {
 /* media queries */
 @media screen and (max-width: 760px) {
   .masthead {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    position: absolute; }
   .masthead ul {
     margin: 0 auto;
     padding-bottom: 1em; }
