@@ -11,7 +11,7 @@ angular.module('timesSearchApp')
 	$scope.submitForm = function(){
 		$rootScope.query = $scope.query;
 
-	    $rootScope.fromDate = $scope.fromDate;
+	        $rootScope.fromDate = $scope.fromDate;
 		$rootScope.toDate = $scope.toDate;
 
 		$rootScope.fromDateforApi= $scope.fromDateforApi;
