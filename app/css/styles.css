@@ -57,6 +57,12 @@ table {
   font-family: 'sketch-gothic-school';
   src: url("../css/sketch_gothic_school/sketchgothicschool.ttf"); }
 
+@font-face {
+  font-family: 'sketch_gothic_schoolregular';
+  src: url("../css/sketchgothicschool-webfont.woff2") format("woff2"), url("../css/sketchgothicschool-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   box-sizing: border-box; }
 
@@ -97,7 +103,7 @@ body {
     display: inline-block; }
 
 .big-title {
-  font-family: "sketch-gothic-school";
+  font-family: "sketch-gothic-school", sans-serif;
   color: #262626;
   font-size: 4em;
   margin-left: .5em;
@@ -381,7 +387,7 @@ hr {
     background: white; }
 
 .results-title h1 {
-  font-family: "sketch-gothic-school";
+  font-family: "sketch-gothic-school", sans-serif;
   font-size: 7em; }
 
 .return-home {
@@ -544,9 +550,6 @@ hr {
     font-size: 1em;
     text-align: center;
     padding: 0.5em 0 0.5em 0; }
-  /*.date-label {
-		display: none;
-	}*/
   .search-container {
     margin-top: 13em; }
   .input-box {
@@ -559,3 +562,7 @@ hr {
     display: none; }
   .results-container {
     margin-top: 14em; } }
+
+@media screen and (max-width: 1000px) {
+  .input-box {
+    width: 75%; } }

@@ -38,7 +38,7 @@ angular.module('timesSearchApp')
 
 		//make sure 'to' date is later than 'from date'
 		//$scope.moreThanFrom = $filter('date')(new Date(convertedFromDate), 'yyyy-MM-dd');
-		$scope.moreThanFrom	= new Date($scope.fromDate);
+		$scope.moreThanFrom = new Date($scope.fromDate);
 	});
 
 	$scope.$watch('toDate', function(convertedToDate){
@@ -97,7 +97,8 @@ angular.module('timesSearchApp')
     	return($rootScope.results);
     };
 }]);
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_3591d922.js","/")
+
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_e732b9c5.js","/")
 },{"buffer":3,"rH1JPG":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

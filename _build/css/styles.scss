@@ -636,9 +636,6 @@ hr {
 		text-align: center;
 		padding: 0.5em 0 0.5em 0;
 	}
-	/*.date-label {
-		display: none;
-	}*/
 	.search-container {
 		margin-top: 13em;
 	}
@@ -655,5 +652,11 @@ hr {
 	}
 	.results-container {
 		margin-top: 14em;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.input-box {
+		width: 75%;
 	}
 }

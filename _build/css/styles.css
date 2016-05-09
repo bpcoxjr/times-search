@@ -748,7 +748,7 @@ body {
     display: inline-block; }
 
 .big-title {
-  font-family: "sketch-gothic-school";
+  font-family: "sketch-gothic-school", sans-serif;
   color: #262626;
   font-size: 4em;
   margin-left: .5em;
@@ -1032,7 +1032,7 @@ hr {
     background: white; }
 
 .results-title h1 {
-  font-family: "sketch-gothic-school";
+  font-family: "sketch-gothic-school", sans-serif;
   font-size: 7em; }
 
 .return-home {
@@ -1179,7 +1179,8 @@ hr {
 /* media queries */
 @media screen and (max-width: 760px) {
   .masthead {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    position: absolute; }
   .masthead ul {
     margin: 0 auto;
     padding-bottom: 1em; }
@@ -1194,9 +1195,6 @@ hr {
     font-size: 1em;
     text-align: center;
     padding: 0.5em 0 0.5em 0; }
-  /*.date-label {
-		display: none;
-	}*/
   .search-container {
     margin-top: 13em; }
   .input-box {
@@ -1209,3 +1207,7 @@ hr {
     display: none; }
   .results-container {
     margin-top: 14em; } }
+
+@media screen and (max-width: 1000px) {
+  .input-box {
+    width: 75%; } }
