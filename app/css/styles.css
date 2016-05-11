@@ -495,7 +495,8 @@ hr {
     font-family: "Belgrano", serif;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 0.5em; }
   .flex-boxes .flex-title {
     color: #262626;
     margin-bottom: 0.5em;
