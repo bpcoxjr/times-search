@@ -36,7 +36,6 @@ body {
 	min-width: 100%;
 	min-height: 6em;
 	position: fixed;
-	display: flex;
 	z-index: 3;
 	transition-timing-function: top 0s ease-out;
 	transition-timing-function: top 3s ease-in;
@@ -44,30 +43,47 @@ body {
 	-webkit-transition-timing-function: top 3s ease-in;
 		li {
 			animation-duration: $animationTime;
-			display: inline-block;
 		}
+}
+
+.masthead ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .big-title {
 	font-family: $timesFont;
-	color: $darker;
 	font-size: 4em;
 	margin-left: .5em;
 	padding-top: .20em;
-	padding-right: 7em;
+	a {
+		color: $darker;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .masthead-links {
 	display: flex;
 	font-family: $googleFont;
 	font-size: 2em;
-	float: right;
-	padding: 1em 2em 0em 0em;
-	color: $darker;
 	-webkit-font-smoothing: $a;
 	text-decoration: none;
+	align-content: center;
+	padding-right: 1em;
+	padding-top: 1em;
 		&:hover {
 			color: $lighter;
+		}
+		a {
+			color: $darker;
+			&:hover {
+				color: $lighter;
+				text-decoration: none;
+			}
 		}
 }
 
@@ -198,7 +214,6 @@ body {
 	font-size: 1.5em;
 	font-family: $googleFont;
 	color: $red;
-	//margin-top: 1em; 
 	display: inline-block;
 	}	
 	.dateFromErrors {
@@ -589,8 +604,9 @@ hr {
 	}
 	.masthead-links {
 		flex-wrap: wrap;
+		justify-content: center;
 		width: 100%;
-		font-size: 1em;
+		font-size: 1.5em;
 		text-align: center;
 		padding: 0.5em 0 0.5em 0;
 	}

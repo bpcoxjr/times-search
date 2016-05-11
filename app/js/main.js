@@ -19,6 +19,11 @@ angular.module('timesSearchApp', ['ArticleServices', 'ngRoute', 'ngMaterial', 'n
 			redirectTo: "/home"
 		});
 	}
-]);
+])
+
+//disable Angular's debug mode, which is enabled by default
+.config(['$compileProvider', function ($compileProvider) {
+  	$compileProvider.debugInfoEnabled(false);
+}]);
 
 

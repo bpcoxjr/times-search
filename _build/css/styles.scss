@@ -36,9 +36,6 @@ body {
 	min-width: 100%;
 	min-height: 6em;
 	position: fixed;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
 	z-index: 3;
 	transition-timing-function: top 0s ease-out;
 	transition-timing-function: top 3s ease-in;
@@ -47,17 +44,35 @@ body {
 		li {
 			-webkit-animation-duration: $animationTime;
 			        animation-duration: $animationTime;
-			display: inline-block;
 		}
+}
+
+.masthead ul {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .big-title {
 	font-family: $timesFont;
-	color: $darker;
 	font-size: 4em;
 	margin-left: .5em;
 	padding-top: .20em;
-	padding-right: 7em;
+	a {
+		color: $darker;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .masthead-links {
@@ -66,13 +81,22 @@ body {
 	display: flex;
 	font-family: $googleFont;
 	font-size: 2em;
-	float: right;
-	padding: 1em 2em 0em 0em;
-	color: $darker;
 	-webkit-font-smoothing: $a;
 	text-decoration: none;
+	-webkit-align-content: center;
+	    -ms-flex-line-pack: center;
+	        align-content: center;
+	padding-right: 1em;
+	padding-top: 1em;
 		&:hover {
 			color: $lighter;
+		}
+		a {
+			color: $darker;
+			&:hover {
+				color: $lighter;
+				text-decoration: none;
+			}
 		}
 }
 
@@ -212,7 +236,6 @@ body {
 	font-size: 1.5em;
 	font-family: $googleFont;
 	color: $red;
-	//margin-top: 1em; 
 	display: inline-block;
 	}	
 	.dateFromErrors {
@@ -631,8 +654,11 @@ hr {
 		-webkit-flex-wrap: wrap;
 		    -ms-flex-wrap: wrap;
 		        flex-wrap: wrap;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		width: 100%;
-		font-size: 1em;
+		font-size: 1.5em;
 		text-align: center;
 		padding: 0.5em 0 0.5em 0;
 	}

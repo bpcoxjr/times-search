@@ -708,6 +708,12 @@ table {
   font-family: 'sketch-gothic-school';
   src: url("../css/sketch_gothic_school/sketchgothicschool.ttf"); }
 
+@font-face {
+  font-family: 'sketch_gothic_schoolregular';
+  src: url("../css/sketchgothicschool-webfont.woff2") format("woff2"), url("../css/sketchgothicschool-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   box-sizing: border-box; }
 
@@ -737,35 +743,45 @@ body {
   min-width: 100%;
   min-height: 6em;
   position: fixed;
-  display: flex;
   z-index: 3;
   transition-timing-function: top 0s ease-out;
   transition-timing-function: top 3s ease-in;
   -webkit-transition-timing-function: top 0s ease-out;
   -webkit-transition-timing-function: top 3s ease-in; }
   .masthead li {
-    animation-duration: 2s;
-    display: inline-block; }
+    animation-duration: 2s; }
+
+.masthead ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
 
 .big-title {
   font-family: "sketch-gothic-school", sans-serif;
-  color: #262626;
   font-size: 4em;
   margin-left: .5em;
-  padding-top: .20em;
-  padding-right: 7em; }
+  padding-top: .20em; }
+  .big-title a {
+    color: #262626; }
+    .big-title a:hover {
+      text-decoration: none; }
 
 .masthead-links {
   display: flex;
   font-family: "Belgrano", serif;
   font-size: 2em;
-  float: right;
-  padding: 1em 2em 0em 0em;
-  color: #262626;
   -webkit-font-smoothing: antialiased;
-  text-decoration: none; }
+  text-decoration: none;
+  align-content: center;
+  padding-right: 1em;
+  padding-top: 1em; }
   .masthead-links:hover {
     color: #595959; }
+  .masthead-links a {
+    color: #262626; }
+    .masthead-links a:hover {
+      color: #595959;
+      text-decoration: none; }
 
 .view {
   margin-top: 8em; }
@@ -1191,8 +1207,9 @@ hr {
     text-align: center; }
   .masthead-links {
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    font-size: 1em;
+    font-size: 1.5em;
     text-align: center;
     padding: 0.5em 0 0.5em 0; }
   .search-container {
