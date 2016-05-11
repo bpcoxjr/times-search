@@ -775,7 +775,7 @@ body {
   text-decoration: none;
   align-content: center;
   padding-right: 1em;
-  padding-top: 1em; }
+  padding-top: 0.5em; }
   .masthead-links:hover {
     color: #595959; }
   .masthead-links a {
@@ -992,7 +992,8 @@ body {
   position: relative;
   border-radius: 5px;
   z-index: 2;
-  animation-duration: 2s; }
+  animation-duration: 2s;
+  height: 15em; }
 
 #stickyResults.sticky {
   position: fixed;
@@ -1015,15 +1016,6 @@ body {
     margin-top: 3em; }
   #stickyResults.sticky hr {
     display: none; }
-
-.weather-report {
-  height: 200px;
-  width: 200px;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding-top: 1em;
-  border: 2px solid #4d4d4d;
-  border-radius: 2px; }
 
 .results-title {
   text-align: center;
@@ -1085,7 +1077,8 @@ hr {
   font-family: "Fanwood Text", serif;
   font-size: 1.25em;
   text-align: left;
-  padding: 1em 0em 1em 0em; }
+  padding: 1em 0em 1em 0em;
+  width: 75%; }
 
 .published-header {
   font-family: "Fanwood Text", serif;
@@ -1132,22 +1125,14 @@ hr {
     justify-content: center;
     position: relative; }
     .flex-boxes .flex-box:focus, .flex-boxes .flex-box:hover {
-      background: #262626;
-      border: 2px solid #fff; }
-      .flex-boxes .flex-box:focus h1, .flex-boxes .flex-box:hover h1 {
-        visibility: hidden; }
-      .flex-boxes .flex-box:focus h2, .flex-boxes .flex-box:hover h2 {
-        visibility: hidden; }
-      .flex-boxes .flex-box:focus p, .flex-boxes .flex-box:hover p {
-        color: #262626; }
-      .flex-boxes .flex-box:focus h3, .flex-boxes .flex-box:hover h3 {
-        opacity: 1;
-        display: flex;
-        align-items: center; }
+      border: 3px solid #262626; }
+      .flex-boxes .flex-box:focus .continue-reading, .flex-boxes .flex-box:hover .continue-reading {
+        opacity: 1; }
   .flex-boxes h2 {
     font-family: "Fanwood Text", serif;
     font-size: 1em;
-    color: #404040; }
+    color: #404040;
+    margin-bottom: 0.5em; }
   .flex-boxes .byline-hr {
     width: 50%;
     padding: 0;
@@ -1157,19 +1142,11 @@ hr {
     text-align: center; }
   .flex-boxes .continue-reading {
     color: #fff;
-    display: none;
+    opacity: 0;
     font-family: "Belgrano", serif;
-    font-size: 2em;
+    font-size: 1em;
     -webkit-font-smoothing: antialiased;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center; }
-    .flex-boxes .continue-reading h3 {
-      opacity: 0; }
+    text-align: center; }
   .flex-boxes .flex-title {
     color: #262626;
     margin-bottom: 0.5em;
