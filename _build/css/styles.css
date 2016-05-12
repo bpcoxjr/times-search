@@ -835,8 +835,7 @@ body {
   height: 65px;
   font-family: "Belgrano", serif;
   font-size: 2.5em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   margin-top: 4em;
   border-radius: 5px;
   border: none;
@@ -848,7 +847,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  width: 50%;
   margin: 0 auto; }
   .date-input .date-label {
     color: #000;
@@ -1171,13 +1169,46 @@ hr {
     flex: 1 1 40em; }
 
 /* media queries */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 375px) {
+  .big-title {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.5em; }
+  .masthead-links {
+    margin: 0 auto;
+    padding: 0 0 0.5em 0; }
+  .input-box {
+    font-size: 1.25em; }
+  .date-input .date-box {
+    margin: 0 auto;
+    line-height: 0em; }
+  .sort-div .sort-label {
+    width: 100%;
+    margin: 0;
+    font-size: 1em; }
+  .sort-input-newest label {
+    margin-top: 0;
+    font-size: 0.6em; }
+  .sort-input-oldest label {
+    margin-top: 0;
+    font-size: 0.6em; }
+  .submit-button {
+    height: 2em; } }
+
+@media screen and (min-width: 376px) and (max-width: 480px) {
   .search-container {
     margin-top: 13em; }
   .input-box {
     margin-top: 0.5em; }
+  .date-input .date-box {
+    margin: 0 auto; }
   .sort-label {
-    width: 100%; } }
+    width: 100%;
+    font-size: 1em; } }
+
+@media screen and (min-width: 481px) {
+  .date-input {
+    width: 50%; } }
 
 @media screen and (min-width: 481px) and (max-width: 760px) {
   .masthead {
@@ -1204,6 +1235,8 @@ hr {
     width: 50%;
     height: 100%;
     font-size: 1.25em; }
+  .date-input .date-box {
+    margin: 0 auto; }
   .sort-div {
     margin: 0 auto; }
   .results-header {
