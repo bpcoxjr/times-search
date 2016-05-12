@@ -572,9 +572,11 @@ hr {
 	.input-box {
 		font-size: 1.25em;
 	}
+	.date-input {
+		display: block;
+	}
 	.date-input .date-box {
 		margin: 0 auto;
-		line-height: 0em;
 	}
 	.sort-div .sort-label {
 		width: 100%;
@@ -617,10 +619,15 @@ hr {
 		padding: 0 0 0.5em 0;
 	}
 	.input-box {
+		font-size: 1.25em;
 		margin-top: 0.5em;
+	}
+	.date-input {
+		display: block;
 	}
 	.date-input .date-box {
 		margin: 0 auto;
+		display: block;
 	}
 	.sort-label {
 		width: 100%;

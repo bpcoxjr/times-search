@@ -1181,6 +1181,8 @@ hr {
     margin: 0 auto; }
   .input-box {
     font-size: 1.25em; }
+  .date-input {
+    display: block; }
   .date-input .date-box {
     margin: 0 auto;
     line-height: 0em; }
@@ -1205,7 +1207,7 @@ hr {
 
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .search-container {
-    margin-top: 13em; }
+    margin-top: 8.25em; }
   .big-title {
     margin: 0 auto;
     text-align: center;
@@ -1214,9 +1216,13 @@ hr {
     margin: 0 auto;
     padding: 0 0 0.5em 0; }
   .input-box {
+    font-size: 1.25em;
     margin-top: 0.5em; }
+  .date-input {
+    display: block; }
   .date-input .date-box {
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: block; }
   .sort-label {
     width: 100%;
     font-size: 1em; }
