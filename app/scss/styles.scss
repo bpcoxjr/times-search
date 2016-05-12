@@ -681,11 +681,14 @@ hr {
 	.sort-div {
 		margin: 0 auto;
 	}
-	.results-header {
-		display: none;
-	}
 	.results-container {
 		margin-top: 14em;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.results-header {
+		display: none;
 	}
 }
 

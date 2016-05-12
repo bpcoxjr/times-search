@@ -1230,7 +1230,6 @@ hr {
 
 @media screen and (min-width: 481px) {
   .date-input {
-    width: 50%;
     display: block; } }
 
 @media screen and (min-width: 481px) and (max-width: 760px) {
@@ -1262,10 +1261,12 @@ hr {
     margin: 0 auto; }
   .sort-div {
     margin: 0 auto; }
-  .results-header {
-    display: none; }
   .results-container {
     margin-top: 14em; } }
+
+@media screen and (max-width: 760) {
+  .results-header {
+    display: none; } }
 
 @media screen and (max-width: 1000px) {
   .input-box {
