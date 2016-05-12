@@ -566,6 +566,9 @@ hr {
 		margin: 0 auto;
 		padding: 0 0 0.5em 0;
 	}
+	.search-container {
+		margin: 0 auto;
+	}
 	.input-box {
 		font-size: 1.25em;
 	}
@@ -577,6 +580,12 @@ hr {
 		width: 100%;
 		margin: 0;
 		font-size: 1em;
+	}
+	.sort-div .sort-input-newest {
+		margin: 0 auto;
+	}
+	.sort-div .sort-input-oldest {
+		margin: 0 auto;
 	}
 	.sort-input-newest label {
 		margin-top: 0;
