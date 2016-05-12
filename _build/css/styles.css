@@ -1188,9 +1188,9 @@ hr {
     width: 100%;
     margin: 0;
     font-size: 1em; }
-  .sort-input-newest {
+  .sort-div .sort-input-newest {
     margin: 0 auto; }
-  .sort-input-oldest {
+  .sort-div .sort-input-oldest {
     margin: 0 auto; }
   .sort-input-newest label {
     margin-top: 0;
@@ -1206,13 +1206,22 @@ hr {
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .search-container {
     margin-top: 13em; }
+  .big-title {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3em; }
+  .masthead-links {
+    margin: 0 auto;
+    padding: 0 0 0.5em 0; }
   .input-box {
     margin-top: 0.5em; }
   .date-input .date-box {
     margin: 0 auto; }
   .sort-label {
     width: 100%;
-    font-size: 1em; } }
+    font-size: 1em; }
+  .about-container {
+    margin-top: 8.25em; } }
 
 @media screen and (min-width: 481px) {
   .date-input {

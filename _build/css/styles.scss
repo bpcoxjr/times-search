@@ -645,7 +645,16 @@ hr {
 
 @media screen and (min-width: 376px) and (max-width: 480px) {
 	.search-container {
-		margin-top: 13em;
+		margin-top: 8.25em;
+	}
+	.big-title {
+		margin: 0 auto;
+		text-align: center;
+		font-size: 3em
+	}
+	.masthead-links {
+		margin: 0 auto;
+		padding: 0 0 0.5em 0;
 	}
 	.input-box {
 		margin-top: 0.5em;
@@ -656,6 +665,9 @@ hr {
 	.sort-label {
 		width: 100%;
 		font-size: 1em;
+	}
+	.about-container {
+		margin-top: 8.25em;
 	}
 }
 
