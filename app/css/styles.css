@@ -212,7 +212,8 @@ body {
     line-height: 2em;
     border: 2px solid #8c8c8c;
     display: inline-block;
-    width: 8.5em; }
+    width: 8.5em;
+    margin-right: 0; }
   .date-input .from-input {
     flex: 1;
     margin-top: 2em; }
@@ -577,7 +578,7 @@ hr {
   .about-container {
     margin-top: 8.25em; } }
 
-@media screen and (min-width: 481px) {
+@media screen and (max-width: 480px) {
   .date-input {
     display: block; } }
 
@@ -612,6 +613,11 @@ hr {
     margin: 0 auto; }
   .results-container {
     margin-top: 14em; } }
+
+@media screen and (min-width: 760px) {
+  .date-input {
+    display: flex;
+    width: 600px; } }
 
 @media screen and (max-width: 760px) {
   .results-header {

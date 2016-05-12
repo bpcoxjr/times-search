@@ -197,6 +197,7 @@ body {
 	border: $inputBorder;
 	display: inline-block;
 	width: 8.5em;
+	margin-right: 0;
 	}
 	.from-input {
 	-webkit-flex: 1;
@@ -678,7 +679,7 @@ hr {
 	}
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (max-width: 480px) {
 	.date-input {
 		display: block;
 	}
@@ -727,6 +728,15 @@ hr {
 	}
 	.results-container {
 		margin-top: 14em;
+	}
+}
+
+@media screen and (min-width: 760px) {
+	.date-input {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		width: 600px;
 	}
 }
 
