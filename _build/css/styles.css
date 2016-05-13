@@ -809,7 +809,7 @@ body {
 
 /*search.html styles*/
 .search-container {
-  margin-top: 9.5em;
+  margin-top: 11em;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   position: relative;
@@ -836,7 +836,7 @@ body {
   font-family: "Belgrano", serif;
   font-size: 2.5em;
   margin: 0 auto;
-  margin-top: 4em;
+  margin-top: 3em;
   border-radius: 5px;
   border: none;
   display: block;
@@ -1253,7 +1253,7 @@ hr {
     text-align: center;
     padding: 0.5em 0 0.5em 0; }
   .search-container {
-    margin-top: 11.5em; }
+    margin-top: 15em; }
   .input-box {
     width: 50%;
     height: 100%;
@@ -1267,7 +1267,8 @@ hr {
 
 @media screen and (min-width: 760px) {
   .date-input {
-    display: flex; } }
+    display: flex;
+    width: 600px; } }
 
 @media screen and (max-width: 760px) {
   .results-header {
