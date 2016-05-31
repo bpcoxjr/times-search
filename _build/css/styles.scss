@@ -644,11 +644,14 @@ hr {
 	.footer {
 		font-size: 1em;
 	}
+	.about-container p {
+		font-size: 1.25em;
+	}
 }
 
 @media screen and (min-width: 376px) and (max-width: 480px) {
 	.search-container {
-		margin-top: 11em;
+		margin-top: 8em;
 	}
 	.big-title {
 		margin: 0 auto;
@@ -676,6 +679,9 @@ hr {
 	}
 	.about-container {
 		margin-top: 8.25em;
+	}
+	.about-container p {
+		font-size: 1.25em;
 	}
 }
 

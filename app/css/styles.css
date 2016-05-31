@@ -552,11 +552,13 @@ hr {
   .submit-button {
     height: 2em; }
   .footer {
-    font-size: 1em; } }
+    font-size: 1em; }
+  .about-container p {
+    font-size: 1.25em; } }
 
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .search-container {
-    margin-top: 11em; }
+    margin-top: 8em; }
   .big-title {
     margin: 0 auto;
     text-align: center;
@@ -576,7 +578,9 @@ hr {
     width: 100%;
     font-size: 1em; }
   .about-container {
-    margin-top: 8.25em; } }
+    margin-top: 8.25em; }
+  .about-container p {
+    font-size: 1.25em; } }
 
 @media screen and (max-width: 480px) {
   .date-input {
