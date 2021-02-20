@@ -2,7 +2,7 @@
 
 angular.module('ArticleServices', [])
 
-	.constant('key', '&api-key=da049a2ebfeed654a53bd38ab6573867:9:60954891')
+	.constant('key', '&api-key=VfdNuqX45gjlB0mwCiQx326R6x6vJlxB')
 	.constant('baseUrl', '//api.nytimes.com/svc/search/v2/articlesearch')
 	
 	.factory('articleFactory', ['$http', '$rootScope', 'key', 'baseUrl', '$route', '$q', function($http, $rootScope, key, baseUrl, $route, $q){
